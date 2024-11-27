@@ -1,7 +1,16 @@
 import React from 'react'
 
-export default function page() {
+interface AnimeProps{
+    params:{
+        id:String
+    }
+}
+
+export default function AnimePage({params}:AnimeProps) {
+    const {id} = params
   return (
-    <div>page</div>
+    <div>
+        My anime page {id}
+    </div>
   )
 }
