@@ -1,0 +1,51 @@
+.page {
+    margin:0px 5%;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: 1px solid;
+    background-color: #8685EF;
+    width: 100%;
+}
+
+@mixin spacing {
+    // display: flex;
+    // flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 11%;
+}
+
+.info {
+    @include spacing();
+    &__left {
+        margin: 5%;
+        img {
+            width: 624px;
+            height: auto;
+        }
+    }
+
+    &__right {
+        display: grid;
+        grid-template-rows: 16%,11%,8%,47%,1fr;
+        padding-right: 25%;
+    }
+}
+
+.info-image-cart {
+    // @include spacing();
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 11%;
+    &__left {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    &__right {
+        padding-right: 25%;
+        margin: auto 0;
+    }
+    
+}
