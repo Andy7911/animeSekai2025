@@ -3,6 +3,8 @@ import React from "react";
 import Image from "next/image";
 
 import "./page.scss";
+import Carousel from "../components/carousel";
+/* Import Swiper styles */
 
 const DetailPage = () => {
   return (
@@ -74,6 +76,44 @@ const DetailPage = () => {
           {" "}
           <button className="btn">Add to Cart</button>
         </div>
+      </section>
+
+      <section className="related-items-title">
+        <p>Related items</p>
+      </section>
+
+      <section className="related-items-carousel">
+        <div>
+          {" "}
+          <div>
+            <Image
+              src="/gundam.png"
+              alt="Gundfam Toy"
+              width={286}
+              height={226}
+            />
+          </div>
+          <div>
+            <Image
+              src="/gundam.png"
+              alt="Gundfam Toy"
+              width={286}
+              height={226}
+            />
+          </div>
+          <div>
+            <Image
+              src="/gundam.png"
+              alt="Gundfam Toy"
+              width={286}
+              height={226}
+            />
+          </div>{" "}
+        </div>
+      </section>
+
+      <section className="bg-green-400 c">
+        <Carousel />
       </section>
     </div>
   );

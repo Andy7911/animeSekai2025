@@ -5,8 +5,13 @@
 .btn {
     padding: 15px 30px;
     border: 1px solid;
+    border-radius: 5px;
     background-color: #8685EF;
     width: 100%;
+
+    &:hover {
+        transform: scale(.98);
+    }
 }
 
 @mixin spacing {
@@ -48,4 +53,26 @@
         margin: auto 0;
     }
     
+}
+
+.related-items-title {
+   
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100px;
+    }
+}
+
+.related-items-carousel {
+    div {
+        padding: 0px 20%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.c {
+    height: 200px;
 }
