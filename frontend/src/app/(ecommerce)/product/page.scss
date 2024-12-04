@@ -42,11 +42,14 @@
 .info-image-cart {
     // @include spacing();
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr); 
     gap: 11%;
     &__left {
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
+        // display: grid;
+        // grid-template-columns: repeat(3,1fr);
+        padding-left: 10%;
+        width: 100%;
+        overflow: hidden;
     }
     &__right {
         padding-right: 25%;

@@ -21,7 +21,7 @@ interface SwiperParameter {
 }
 
 
-const Carousel : React.FC<SwiperParameter> = ( { parameterName }) => {
+const CarouselRelatedItems : React.FC<SwiperParameter> = ( { parameterName }) => {
   return (
     <div style={{ position: 'relative', width: '80%' , margin : '0 auto' }}  className="carousel-container">
 
@@ -38,8 +38,8 @@ const Carousel : React.FC<SwiperParameter> = ( { parameterName }) => {
         //   disableOnInteraction: false,
         // }}
         navigation={{ 
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: `.swiper-button-next${parameterName}`,
+          prevEl: `.swiper-button-prev${parameterName}`,
         }}
         // pagination={{ clickable: true }}
         // loop={true}
@@ -58,10 +58,10 @@ const Carousel : React.FC<SwiperParameter> = ( { parameterName }) => {
         </SwiperSlide>
       </Swiper>
 
-      <div style={{right : "-10%"}} className="swiper-button-next"></div>
-      <div style={{left : "-10%"}} className="swiper-button-prev"></div>
+      <div style={{right : "-10%"}} className={'swiper-button-next ' + `swiper-button-next${parameterName}` } ></div>
+      <div style={{left : "-10%"}} className={`swiper-button-prev ` + `swiper-button-prev${parameterName}`}></div>
     </div>
   );
 };
 
-export default Carousel;
+export default CarouselRelatedItems;

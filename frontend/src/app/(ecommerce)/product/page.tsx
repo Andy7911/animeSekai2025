@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import "./page.scss";
 import Carousel from "../components/carousel";
+import CarouselRelatedItems from "../components/carousel-related-items";
 /* Import Swiper styles */
 
 const DetailPage = () => {
@@ -46,7 +47,7 @@ const DetailPage = () => {
       <section className="info-image-cart">
         {/* Carousel with different images  */}
         <div className="info-image-cart__left">
-          <div>
+          {/* <div>
             <Image
               src="/gundam.png"
               alt="Gundfam Toy"
@@ -69,7 +70,9 @@ const DetailPage = () => {
               width={105}
               height={105}
             />
-          </div>
+          </div> */}
+
+<       CarouselRelatedItems parameterName="asdsds"/>
         </div>
         {/* Button to add item to cart */}
         <div className="info-image-cart__right">
@@ -113,7 +116,9 @@ const DetailPage = () => {
       </section>
 
       <section className="bg-green-400 c">
-        <Carousel />
+        {/* <Carousel parameterName="carousel-2" /> */}
+        < CarouselRelatedItems parameterName="sdsdsdwerwer32rt3"/>
+
       </section>
     </div>
   );
