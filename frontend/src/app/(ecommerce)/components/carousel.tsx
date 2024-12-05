@@ -17,29 +17,34 @@ import "swiper/swiper-bundle.css";
 // Swiper styles
 
 interface SwiperParameter {
-  parameterName : string 
+  parameterName : string,
+  width?: string // ex : 75%,
+  navigationButtonOffset? : string // ex 10%
+  navgiationButtonfontSize? : string
+  spaceBetweenSlide? : number
+
 }
 
 
-const Carousel : React.FC<SwiperParameter> = ( { parameterName }) => {
+const Carousel : React.FC<SwiperParameter> = ( { parameterName, width = "80%", navigationButtonOffset = "-10%" , spaceBetweenSlide = 50  }) => {
   return (
-    <div style={{ position: 'relative', width: '80%' , margin : '0 auto' }}  className="carousel-container">
+    <div style={{ position: 'relative', width: width , margin : '0 auto' }}  className="carousel-container">
 
       <Swiper
         key={parameterName}
         id={parameterName}
-        autoHeight={true}
+        autoHeight={false}
         direction="horizontal"
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={50}
+        spaceBetween={spaceBetweenSlide}
         slidesPerView={3}
         // autoplay={{
         //   delay: 2500,
         //   disableOnInteraction: false,
         // }}
         navigation={{ 
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: `.swiper-button-next${parameterName}`,
+          prevEl: `.swiper-button-prev${parameterName}`,
         }}
         // pagination={{ clickable: true }}
         // loop={true}
@@ -58,8 +63,8 @@ const Carousel : React.FC<SwiperParameter> = ( { parameterName }) => {
         </SwiperSlide>
       </Swiper>
 
-      <div style={{right : "-10%"}} className="swiper-button-next"></div>
-      <div style={{left : "-10%"}} className="swiper-button-prev"></div>
+      <div style={{right : navigationButtonOffset}} className={'swiper-button-next ' + `swiper-button-next${parameterName}` } ></div>
+      <div style={{left : navigationButtonOffset}} className={`swiper-button-prev ` + `swiper-button-prev${parameterName}`}></div>
     </div>
   );
 };

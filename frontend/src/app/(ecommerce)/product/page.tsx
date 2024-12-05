@@ -3,8 +3,8 @@ import React from "react";
 import Image from "next/image";
 
 import "./page.scss";
-import Carousel from "../components/carousel";
-import CarouselRelatedItems from "../components/carousel-related-items";
+
+import Carousel from '../components/carousel'
 /* Import Swiper styles */
 
 const DetailPage = () => {
@@ -72,7 +72,12 @@ const DetailPage = () => {
             />
           </div> */}
 
-<       CarouselRelatedItems parameterName="asdsds"/>
+        <Carousel 
+                  parameterName="current-item" 
+                  width="75%" 
+                  navigationButtonOffset="-15%"
+                  spaceBetweenSlide={25}
+                  navgiationButtonfontSize="1rem"/>
         </div>
         {/* Button to add item to cart */}
         <div className="info-image-cart__right">
@@ -117,7 +122,7 @@ const DetailPage = () => {
 
       <section className="bg-green-400 c">
         {/* <Carousel parameterName="carousel-2" /> */}
-        < CarouselRelatedItems parameterName="sdsdsdwerwer32rt3"/>
+        < Carousel parameterName="related-items" width="70%"/>
 
       </section>
     </div>
