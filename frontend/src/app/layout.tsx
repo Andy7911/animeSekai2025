@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.scss";
+import './globals.scss';
 import { Suspense } from "react";
 // import Header from "../components/organisms/Header";
 // import Footer from "../components/organisms/Footer";

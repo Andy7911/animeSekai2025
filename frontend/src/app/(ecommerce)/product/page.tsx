@@ -9,8 +9,8 @@ import Carousel from '../components/carousel'
 
 const DetailPage = () => {
   return (
-    <div className="page bg-red-400">
-      <div className="info bg-blue-400">
+    <div className="page">
+      <div className="info">
         {/* Left Side with Image */}
         <div className="info__left">
           {" "}
@@ -24,9 +24,9 @@ const DetailPage = () => {
         {/* Right Side  */}
         <div className="info__right">
           {/* 16% heigth*/}
-          <h2>Strike Freedom</h2>
+          <h2 className="font-bold font-xl">Strike Freedom</h2>
           {/* 11% heigth */}
-          <span>30.66 $</span>
+          <span className="font-">30.66 $</span>
           {/* 8% heigth */}
           <h3>Product description</h3>
           {/* 47% */}
@@ -89,7 +89,7 @@ const DetailPage = () => {
       <section className="related-items-title">
         <p>Related items</p>
       </section>
-
+{/* 
       <section className="related-items-carousel">
         <div>
           {" "}
@@ -118,11 +118,11 @@ const DetailPage = () => {
             />
           </div>{" "}
         </div>
-      </section>
+      </section> */}
 
-      <section className="bg-green-400 c">
+      <section className="wrapper-related-items-content">
         {/* <Carousel parameterName="carousel-2" /> */}
-        < Carousel parameterName="related-items" width="70%"/>
+        <Carousel parameterName="related-items-content" width="70%"/>
 
       </section>
     </div>
