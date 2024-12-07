@@ -9,7 +9,7 @@ export default function WatchPage({params}:WatchProps) {
 const {id} = params;
   return (
     <div>
-      watch page {id}
+      watch page
     </div>
   )
 }
