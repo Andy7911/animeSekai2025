@@ -1,0 +1,28 @@
+.footer {
+    background-color: #302E57;
+    height: 350px;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+
+        .social-media-icons {
+            display: flex;
+        }
+
+        .button-email {
+            background-color: #2D2D32;
+            // text-align: center;
+            padding: 8px 10px 8px 45px; // 30px means that the icon and text are not going to clash
+            background-image: url('../../../public/email-icon.svg');
+            background-position: 10px center;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+
+        }
+    }
+
+    
+
+    
+}

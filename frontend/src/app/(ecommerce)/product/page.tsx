@@ -2,12 +2,12 @@ import React from "react";
 
 import Image from "next/image";
 
-import "./page.scss";
+import "../../../styles/page/product.scss"
 
 import Carousel from '../components/carousel'
 /* Import Swiper styles */
 
-const DetailPage = () => {
+const ProductPage = () => {
   return (
     <div className="page">
       <div className="info">
@@ -129,4 +129,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default ProductPage;

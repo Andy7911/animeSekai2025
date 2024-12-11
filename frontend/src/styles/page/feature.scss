@@ -1,0 +1,47 @@
+// body,
+// html {
+//     height: 100%;
+// }
+
+.feature {
+
+    min-height: 100dvh;
+    height: 100dvh;
+    width: 100%;
+
+    .carousel-section {
+        background-color: #8685EF;
+        height: 95%;
+        width: 100%;
+    }
+
+    .carousel-item {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        height: 100%;
+
+        &__left {
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                padding-left: 30px;
+                padding-right: 10%;
+            }
+        }
+
+        &__right {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .button {
+            padding: 15px 25px;
+            border : 1px solid white;
+            border-radius: 5px;
+        }
+
+    }
+}
