@@ -9,7 +9,8 @@ const FeaturePage = () => {
     
             <div className="carousel-item">
                 <div className='carousel-item__left'>
-                    <Image src="/gundam.png" height={200} width={200} alt="gundam" />
+                    {/* Added the unoptimized prop for better image rendering */}
+                    <Image src="/gundam.png" height={200} width={200} alt="gundam" unoptimized />
                 </div>
                 <div className='carousel-item__right'>
                     <div className="carousel-item__right__upper-logo">

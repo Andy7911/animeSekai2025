@@ -24,6 +24,10 @@ const Footer = () => {
                 <input className="button-email"  type="text" name="email" id="" placeholder='Enter your email' />
             </div>
         </div>
+        <div className="grid-bottom-of-page">
+            <div> <Image width={69} height={69} src="/anime-logo.png" alt='Anime Logo' /></div>
+            <div> <p>© Anime sekai tous droit reserver</p></div>
+        </div>
     </div>
 }
 
