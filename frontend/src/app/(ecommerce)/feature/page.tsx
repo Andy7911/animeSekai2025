@@ -22,6 +22,18 @@ const FeaturePage = () => {
                 </div>
             </div>
         </section>
+        <section className="parallax-scrolling-section">
+          {/* background: url('....') in SCSS */}  
+        </section>
+        {/* Section exploration */}
+        <section className='exploration-section'>
+            <p>Explorer des Figurines et acessior des vos animes preferer</p>
+            <div className='container'>
+                <div className=''>
+                    
+                </div>
+            </div>
+        </section>
     </div>
 }
 

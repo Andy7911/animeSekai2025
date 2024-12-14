@@ -1,8 +1,3 @@
-// body,
-// html {
-//     height: 100%;
-// }
-
 .feature {
 
     min-height: 100dvh;
@@ -11,7 +6,7 @@
 
     .carousel-section {
         background-color: #8685EF;
-        height: 95%;
+        height: 100%;
         width: 100%;
     }
 
@@ -51,6 +46,14 @@
             border : 1px solid white;
             border-radius: 5px;
         }
+    }
 
+    .parallax-scrolling-section {
+        background-image: url('/gundam-manga-image.webp');
+        min-height: 482px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }

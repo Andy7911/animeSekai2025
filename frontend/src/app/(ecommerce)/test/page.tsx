@@ -1,12 +1,13 @@
 import React from "react";
 
 import './page.scss'
-import Footer from "../components/footer";
+import Pokeball from "../components/feature_components/pokeball";
+
 
 const page = () => {
   return (
     <div>
-     <Footer />
+      <Pokeball />
     </div>
   );
 };
