@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "episodes",
+  "info": {
+    "singularName": "episode",
+    "pluralName": "episodes",
+    "displayName": "Episode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Season": {
+      "type": "integer"
+    },
+    "Nb_episode": {
+      "type": "integer"
+    },
+    "release_date": {
+      "type": "date"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::anime.anime"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
+      "mappedBy": "video"
+    }
+  }
+}

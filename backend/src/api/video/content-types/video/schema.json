@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "singularName": "video",
+    "pluralName": "videos",
+    "displayName": "Video"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Langues": {
+      "type": "enumeration",
+      "enum": [
+        "VO",
+        "VF",
+        "VE"
+      ]
+    },
+    "URL": {
+      "type": "string"
+    },
+    "episode": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::episode.episode"
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::episode.episode",
+      "inversedBy": "videos"
+    }
+  }
+}

@@ -17,21 +17,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="use-credentials" />
-        <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="use-credentials" />
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
-      </head>
-      <body
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="use-credentials"/>
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Share+Tech&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/>
+              <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+              <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
+            </head>
+            <body
 
-      >
+            >
 
-        <Suspense fallback={<div> loading ...</div>}>
-          {children}
-        </Suspense>
-      </body>
-    </html>
-  );
+              <Suspense fallback={<div> loading ...</div>}>
+                {children}
+              </Suspense>
+            </body>
+          </html>
+          );
 }

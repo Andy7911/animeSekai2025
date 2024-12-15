@@ -1,11 +1,32 @@
 import Image from "next/image";
-
+import Hero from "@/components/Hero";
+import example from '../../public/img/tokyo-thumb.jpeg'
 
 export default function Home() {
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div> Home page james nothing compile</div>
+    <div className="container home">
+      <Hero />
+
+      <section className="recommend">
+        <h3>Sélection Recommender</h3>
+        <div className="recommend__list">
+          <a className="recommend__thumbnail">
+            <Image alt="thumbnail" src={example} />
+
+          </a>
+          <a className="recommend__thumbnail">
+            <Image alt="thumbnail" src={example} />
+
+          </a>
+
+        </div>
+
+      </section>
+      <section className="last_released">
+
+      </section>
+
     </div>
   );
 }
