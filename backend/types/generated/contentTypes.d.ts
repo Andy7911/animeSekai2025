@@ -401,6 +401,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
   collectionName: 'animes';
   info: {
+    description: '';
     displayName: 'Anime';
     pluralName: 'animes';
     singularName: 'anime';
@@ -409,16 +410,21 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    category: Schema.Attribute.Enumeration<
+      ['recommande', 'vedette', 'regular']
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    gif: Schema.Attribute.Media<'images'>;
     Highline_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::anime.anime'> &
       Schema.Attribute.Private;
+    musique: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Name: Schema.Attribute.String;
-    notation: Schema.Attribute.Integer &
+    notation: Schema.Attribute.Decimal &
       Schema.Attribute.SetMinMax<
         {
           max: 5;
@@ -607,6 +613,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
+    description: '';
     displayName: 'HomePage';
     pluralName: 'home-pages';
     singularName: 'home-page';
@@ -629,6 +636,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    Hero: Schema.Attribute.Component<'sections.hero', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -644,6 +657,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
   collectionName: 'videos';
   info: {
+    description: '';
     displayName: 'Video';
     pluralName: 'videos';
     singularName: 'video';
@@ -665,7 +679,6 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     URL: Schema.Attribute.String;
-    video: Schema.Attribute.Relation<'manyToOne', 'api::episode.episode'>;
   };
 }
 

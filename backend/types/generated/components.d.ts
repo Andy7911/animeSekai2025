@@ -19,6 +19,7 @@ export interface SectionsHero extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
     CTA: Schema.Attribute.Component<'component.button', true>;
     Headline: Schema.Attribute.String;
     Picture: Schema.Attribute.Media<'images'>;

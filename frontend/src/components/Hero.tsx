@@ -4,7 +4,7 @@ import Image from 'next/image'
 import img from '../../public/img/rengoku.webp'
 import gif from '../../public/img/demon-slayer-gif-converter.gif';
 import music from '../../public/audio/demon-slayer-rengoku.MP3';
-import star from '../../public/img/Star.png'
+import star from '../../public/img/Star.png';
 export default function Hero() {
     const audioRef = useRef(null);
     const [hidden, setHidden] = useState(false);

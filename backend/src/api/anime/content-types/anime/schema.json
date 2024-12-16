@@ -4,7 +4,8 @@
   "info": {
     "singularName": "anime",
     "pluralName": "animes",
-    "displayName": "Anime"
+    "displayName": "Anime",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,22 +16,49 @@
       "type": "string"
     },
     "Thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "description": {
       "type": "text"
     },
     "notation": {
-      "type": "integer",
+      "type": "decimal",
       "max": 5,
       "min": 1
     },
     "Highline_title": {
       "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "recommande",
+        "vedette",
+        "regular"
+      ]
+    },
+    "gif": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "musique": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

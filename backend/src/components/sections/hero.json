@@ -33,6 +33,11 @@
       "type": "component",
       "repeatable": true,
       "component": "component.button"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::anime.anime"
     }
   }
 }
