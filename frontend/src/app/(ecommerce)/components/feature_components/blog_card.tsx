@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Card_Blog = () => {
+const BlogCard = () => {
   return (
-    <div>
+    <div className='blogCard'>
       <div className='grid'>
         <div className='grid__top'>
           <p>Blog</p>
@@ -14,4 +14,4 @@ const Card_Blog = () => {
   )
 }
 
-export default Card_Blog;
+export default BlogCard;

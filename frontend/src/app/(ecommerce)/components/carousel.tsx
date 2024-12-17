@@ -7,7 +7,7 @@ import { Pagination } from 'swiper/modules';
 import { Autoplay } from 'swiper/modules';
 import Image from "next/image";
 
-import  '../../../styles/components/carousel.module.scss';
+
 // import './swiper-bundle.min.css'
 
 import "swiper/swiper-bundle.css";

@@ -2,11 +2,12 @@ import React from "react";
 
 import Image from "next/image";
 
-import "../../../styles/page/product.scss"
 
 import Carousel from '../components/carousel'
 /* Import Swiper styles */
 
+// TODO
+// Fix glicth with the carousel
 const ProductPage = () => {
   return (
     <div className="page">

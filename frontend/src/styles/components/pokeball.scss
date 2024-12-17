@@ -1,47 +1,63 @@
-.pokeball {
+.outer-pokeball-transparent {
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+    background-color: transparent;
     border-radius: 50%;
-    background: white;
-    width: 288px;
-    height: 288px;
     overflow: hidden;
-    position: relative;
 
 
-    .upper-circle{
-        height: 50%;
-        width: 100%;
-        border-radius: 50% 50% 0 0;
-        background-color: #F80019;
-    }
-
-    @mixin circle($height,$width, $border, $z-index ,$background-color) {
-        background-color: $background-color;
-        height: $height;
-        width: $width;
-        border: $border;
+    .pokeball {
         border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        z-index: $z-index;
+        background: white;
+        width: 288px;
+        height: 288px;
+        overflow: hidden;
+        position: relative;
 
-    }
-    .middle-circle-border {
-       @include circle(20%, 20%, 3px solid black,10, white );
+
+        .upper-circle {
+            height: 50%;
+            width: 100%;
+            border-radius: 50% 50% 0 0;
+            background-color: #F80019;
+        }
+
+        @mixin circle($height, $width, $border, $z-index , $background-color) {
+            background-color: $background-color;
+            height: $height;
+            width: $width;
+            border: $border;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: $z-index;
+
+        }
+
+        .middle-circle-border {
+            @include circle(20%, 20%, 3px solid black, 10, white);
+        }
+
+        .middle-circle-no-border {
+            @include circle(25%, 25%, none, 9, white);
+        }
+
+        // Change the width of the dotted line here
+        $w-middle-dotted-line : 50%;
+
+        .middle-dotted-line {
+            border: 1px dotted #888888;
+            position: absolute;
+            width: $w-middle-dotted-line;
+            height: 3px;
+            transform: translateX((100% - $w-middle-dotted-line) / 2);
+            top: 50%;
+            z-index: 100;
+        }
     }
 
-    .middle-circle-no-border {
-        @include circle(25%,25% , none,9, white);
-    }
-
-    .middle-dotted-line {
-        border: 1px dotted #888888;
-        position: absolute;
-        width: 90%;
-        height: 3px;
-        transform: translateX(5%);
-        top: 50%;
-        z-index: 100;
-    }
 }

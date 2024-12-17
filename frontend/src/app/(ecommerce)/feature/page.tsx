@@ -1,15 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import CarouselFeaturePage from '../components/carousel-feature-page';
 
-import '../../../styles/page/feature.scss';
 
 const FeaturePage = () => {
     return <div className='feature'>
         <section className='carousel-section'>
     
-            <div className="carousel-item">
+            {/* Added the unoptimized prop for better image rendering */}
+            {/* <div className="carousel-item">
                 <div className='carousel-item__left'>
-                    {/* Added the unoptimized prop for better image rendering */}
+                    
                     <Image src="/gundam.png" height={200} width={200} alt="gundam" unoptimized />
                 </div>
                 <div className='carousel-item__right'>
@@ -20,17 +21,32 @@ const FeaturePage = () => {
                         <button className="button">View More</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            
+            <CarouselFeaturePage parameterName={'carousel'}  />
         </section>
         <section className="parallax-scrolling-section">
           {/* background: url('....') in SCSS */}  
         </section>
         {/* Section exploration */}
         <section className='exploration-section'>
+
+            
+
             <p>Explorer des Figurines et acessior des vos animes preferer</p>
-            <div className='container'>
-                <div className=''>
-                    
+            <div className='flex'>
+                
+                <div className="exploration-section__content">
+                    <Image src="/cosplay.png" width={154} height={154} alt='Cosplay image' />
+                    <p>cosplay</p>
+                </div>
+                <div className="exploration-section__content">
+                    <Image src="/robot.png" width={154} height={154} alt="Figurine image" />
+                    <p>Figurine</p>
+                </div>
+                <div className="exploration-section__content">
+                    <Image src="/comic.png" width={154} height={154}  alt="Manga or novel" />
+                    <p>Manga or novel</p>
                 </div>
             </div>
         </section>

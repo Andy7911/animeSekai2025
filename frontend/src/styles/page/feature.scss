@@ -1,52 +1,55 @@
 .feature {
 
-    min-height: 100dvh;
-    height: 100dvh;
-    width: 100%;
+    // min-height: 100dvh;
+    // height: 100dvh;
+    // width: 100%;
+    
 
+    // The .carousel-section's background-color will probably be overide
+    // depending the current anime presentation
     .carousel-section {
         background-color: #8685EF;
         height: 100%;
         width: 100%;
     }
 
-    .carousel-item {
-        display: grid;
-        grid-template-columns: 75% 25%;
-        height: 100%;
+    // .carousel-item {
+    //     display: grid;
+    //     grid-template-columns: 75% 25%;
+    //     height: 100%;
 
-        &__left {
-            overflow: hidden;
-            /* The big image */
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-                padding-left: 30px;
-                padding-right: 10%;
-            }
-        }
+    //     &__left {
+    //         overflow: hidden;
+    //         /* The big image */
+    //         img {
+    //             height: 100%;
+    //             width: 100%;
+    //             object-fit: cover;
+    //             padding-left: 30px;
+    //             padding-right: 10%;
+    //         }
+    //     }
 
-        &__right {
-            display: grid;
-            grid-template-rows: repeat(2, 1fr);
+    //     &__right {
+    //         display: grid;
+    //         grid-template-rows: repeat(2, 1fr);
 
-            &__upper-logo {
-                position: relative;
-                /* The img  */
-                img {
-                    position: absolute;
-                    bottom: 15%;
-                }
-            }
-        }
+    //         &__upper-logo {
+    //             position: relative;
+    //             /* The img  */
+    //             img {
+    //                 position: absolute;
+    //                 bottom: 15%;
+    //             }
+    //         }
+    //     }
 
-        .button {
-            padding: 15px 25px;
-            border : 1px solid white;
-            border-radius: 5px;
-        }
-    }
+    //     .button {
+    //         padding: 15px 25px;
+    //         border : 1px solid white;
+    //         border-radius: 5px;
+    //     }
+    // }
 
     .parallax-scrolling-section {
         background-image: url('/gundam-manga-image.webp');
@@ -56,4 +59,40 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .exploration-section {
+        padding-top: 3%;
+        position: relative;
+        background-color: white;
+        color : black;
+        height: 100dvh;
+        
+        padding-left: 6%;
+        padding-right: 6%;
+
+        p:first-child {
+            font-size: 2.5rem;
+            width: 45%;
+            margin-bottom: 20px;
+            
+        }
+        
+        .flex {
+            
+            display: flex;
+            justify-content: start;
+        }
+
+        &__content {
+            p {
+                text-align: center;
+            }
+        }
+        
+    }
+
+    @media (max-width : $mobile) {
+        
+    }
+    
 }

@@ -1,0 +1,54 @@
+.carousel-container-feature {
+    
+    max-width: 100%;
+    // .img {
+    //   width: 100%;
+    //   height: auto;
+    //   border-radius: 8px;
+    // }
+  
+    /* */
+  
+    
+    //  The .carousel-section's background-color will probably be overide
+    //   depending the current anime presentation
+      .carousel-item {
+          display: grid;
+          grid-template-columns: 75% 25%;
+          height: 100dvh;
+  
+          &__left {
+              overflow: hidden;
+              /* The big image */
+              img {
+                  height: 100%;
+                  width: 100%;
+                  object-fit: cover;
+                  padding-left: 30px;
+                  padding-right: 10%;
+              }
+          }
+  
+          &__right {
+              display: grid;
+              grid-template-rows: repeat(2, 1fr);
+  
+              &__upper-logo {
+                  position: relative;
+                  /* The img  */
+                  img {
+                      position: absolute;
+                      bottom: 15%;
+                  }
+              }
+          }
+  
+          .button {
+              padding: 15px 25px;
+              border : 1px solid white;
+              border-radius: 5px;
+          }
+      }
+    
+  }
+  

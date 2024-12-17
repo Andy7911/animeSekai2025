@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from "next/image";
 
-import "../../../styles/components/footer.scss"
+
 
 const Footer = () => {
     return <div className='footer'>
@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="grid__right">
                 <h3 className=''>Newsletters</h3>
                 <p>Abonnez-vous à notre newsletter pour recevoir votre dose hebdomadaire d'actualités, de mises à jour, de conseils et d'offres spéciales</p>
-                <input className="button-email"  type="text" name="email" id="" placeholder='Enter your email' />
+                <input className="input-email"  type="text" name="email" id="" placeholder='Enter your email' />
             </div>
         </div>
         <div className="grid-bottom-of-page">
