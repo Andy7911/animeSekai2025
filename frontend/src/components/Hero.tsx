@@ -5,8 +5,39 @@ import img from '../../public/img/rengoku.webp'
 import gif from '../../public/img/demon-slayer-gif-converter.gif';
 import music from '../../public/audio/demon-slayer-rengoku.MP3';
 import star from '../../public/img/Star.png';
-export default function Hero() {
-    const audioRef = useRef(null);
+
+
+interface Picture{
+    url:String
+  }
+  interface Media{
+    url:String
+  }
+  interface Anime{
+   id:Number,
+   Name:String,
+   description:String,
+   notation:number,
+   Highline_title:String
+   categories:String
+   gif:Media,
+   musique:Media
+ 
+  }
+  
+  interface Hero { 
+ 
+  Headline:String,
+  SubHeadline:String,
+  Description:String,
+  Picture: Picture,
+  Anime:Anime  
+  
+  
+  }
+
+export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:Hero) {
+    const audioRef = useRef<HTMLAudioElement | null>(null);
     const [hidden, setHidden] = useState(false);
     useEffect(() => {
 
@@ -14,13 +45,18 @@ export default function Hero() {
     const animationPlay = () => {
 
         setHidden(true);
-        // audioRef.current.play();
+        if(audioRef.current){
+        audioRef.current.play();
+        audioRef.current.loop= true;
+    }
 
     }
     const animationStop = () => {
 
         setHidden(false);
-        // audioRef.current.pause();
+        if(audioRef.current){
+        audioRef.current.pause();
+    }
 
     }
     const elements = []
@@ -30,11 +66,10 @@ export default function Hero() {
 
     return (
 
-        <div className='hero' onMouseEnter={() => animationPlay()} onMouseOut={() => animationStop()}>
+        <div className='hero' onClick={() => animationPlay()} onMouseOut={() => animationStop()}>
             <div className='hero__left'>
-                <h4> S1 | 26 Episode</h4>
-                <h1>DEMON SLAYER
-                    KIMETSU NO YAIBA</h1>
+                <h4> {Headline}</h4>
+                <h1>{SubHeadline}</h1>
                 <div className='categories'>
 
                     <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span>
@@ -44,7 +79,7 @@ export default function Hero() {
                     {elements} <span>4.0</span>
                 </div>
                 <p>
-                L'histoire suit le périple de Kamado Tanjirō qui cherche un moyen de rendre sa petite sœur Nezuko de nouveau humaine après sa transformation en démon.
+                    {Description}
                 </p>
                 <div className='hero__btn_wrap'>
                     <a href="" className='button-rounded'>watch</a>
@@ -53,12 +88,12 @@ export default function Hero() {
             </div>
             <div className='hero__right'>
                 <div className='hero__img_wrap'>
-                    {!hidden && (<Image alt="hero_img" src={img} width={542} height={395} />)}
+                    {!hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${Picture.url}`} unoptimized/>)}
 
-                    {hidden && (<Image alt="hero_img" src={gif} width={542} height={395} />)}
+                    {hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${Anime.gif.url}`} unoptimized/>)}
 
                     <audio ref={audioRef} controls>
-                        <source src='/audio/demon-slayer-rengoku.MP3' type="audio/mpeg" />
+                        <source src={`${process.env.NEXT_PUBLIC_API_URL}${Anime.musique.url}`} type="audio/mpeg" />
                     </audio>
                 </div>
             </div>

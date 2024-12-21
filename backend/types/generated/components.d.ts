@@ -1,5 +1,29 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AnimeAnimeRecommend extends Struct.ComponentSchema {
+  collectionName: 'components_anime_anime_recommends';
+  info: {
+    description: '';
+    displayName: 'Recommends_anime';
+    icon: 'play';
+  };
+  attributes: {
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
+  };
+}
+
+export interface AnimeLastRealeaseAnime extends Struct.ComponentSchema {
+  collectionName: 'components_anime_last_realease_animes';
+  info: {
+    description: '';
+    displayName: 'Last_realease_anime';
+  };
+  attributes: {
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentButton extends Struct.ComponentSchema {
   collectionName: 'components_component_buttons';
   info: {
@@ -21,10 +45,10 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
     CTA: Schema.Attribute.Component<'component.button', true>;
+    Description: Schema.Attribute.Text;
     Headline: Schema.Attribute.String;
     Picture: Schema.Attribute.Media<'images'>;
     SubHeadline: Schema.Attribute.String;
-    Video: Schema.Attribute.Media<'videos'>;
   };
 }
 
@@ -93,6 +117,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'anime.anime-recommend': AnimeAnimeRecommend;
+      'anime.last-realease-anime': AnimeLastRealeaseAnime;
       'component.button': ComponentButton;
       'sections.hero': SectionsHero;
       'shared.media': SharedMedia;

@@ -7,6 +7,7 @@ export default  {
         console.log("beforeUpdate lifecycle called!");
         const { data } = event.params;
             // Règle 1 : Un seul anime peut être "vedette"
+            console.log(data)
     if (data.category === "vedette") {
         const existingFeatured = await strapi.entityService.findMany("api::anime.anime", {
           filters: { category: "vedette" },

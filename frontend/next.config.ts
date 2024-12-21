@@ -4,13 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
-  },images: {
+  },
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+        pathname: '/uploads/**',
       },
     ],
   }
