@@ -1,6 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import CarouselFeaturePage from '../components/carousel-feature-page';
+import BlogCard from '../components/feature_components/blog_card';
+import AboutCard from '../components/feature_components/about_card';
+import CarouselFeatureSoloProduct from '../components/carousel-feature-solo-product';
+
+// TODO Feature page
+// The background color, the manga image, and the problaby the pokeball style image will need to change
+// when the image changes
+// You will need to detect the swiper on Carousel changes
+// The change the background color of the Carousel-section and the parallax-scrolling-section
 
 
 const FeaturePage = () => {
@@ -48,6 +57,26 @@ const FeaturePage = () => {
                     <Image src="/comic.png" width={154} height={154}  alt="Manga or novel" />
                     <p>Manga or novel</p>
                 </div>
+            </div>
+        </section>
+
+        <section className="insight-idea-section">
+            <div className="flex justify-between">
+                <BlogCard title="Blog" body="Comment choisir la meilleure figurine pour votre collection" right_side_circle={true}/>
+                <BlogCard title="Astuces" body="Décrouvez nos rubriques Actuces" />
+            </div>
+            
+            <AboutCard />
+            
+        </section>
+
+        <section className='feature-product-section'>
+            <div className='grid'>
+                <CarouselFeatureSoloProduct parameterName='solo-product' />
+            </div>
+            
+            <div className="feature-product-section__see-offers">
+                <a href="/filter">See All</a>
             </div>
         </section>
     </div>

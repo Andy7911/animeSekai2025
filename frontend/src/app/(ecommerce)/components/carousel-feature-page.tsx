@@ -1,3 +1,5 @@
+// This is the carousel that is on the top of the Feature Page
+
 "use client"
 
 import React from 'react';
@@ -48,6 +50,9 @@ const CarouselFeaturePage : React.FC<SwiperParameter> = ( { parameterName, width
         //   prevEl: `.swiper-button-prev${parameterName}`,
         // }}
         pagination={{ clickable: true }}
+        // pagination= {{
+        //     el : "swiper-pagination",
+        // }}s
         // loop={true}
       >
         <SwiperSlide>
@@ -67,10 +72,10 @@ const CarouselFeaturePage : React.FC<SwiperParameter> = ( { parameterName, width
             </div>
         </SwiperSlide>
         <SwiperSlide>
-        <div className="carousel-item">
+        <div className="carousel-item bg-orange-600">
                 <div className='carousel-item__left'>
                    
-                    <Image src="/goku_flying.jpg" height={200} width={200} alt="gundam" unoptimized />
+                    <Image src="/goku_flying.png" height={200} width={200} alt="gundam" unoptimized />
                 </div>
                 <div className='carousel-item__right'>
                     <div className="carousel-item__right__upper-logo">
@@ -89,9 +94,6 @@ const CarouselFeaturePage : React.FC<SwiperParameter> = ( { parameterName, width
         
         </SwiperSlide>
       </Swiper>
-
-      {/* <div style={{right : navigationButtonOffset}} className={'swiper-button-next ' + `swiper-button-next${parameterName}` } ></div>
-      <div style={{left : navigationButtonOffset}} className={`swiper-button-prev ` + `swiper-button-prev${parameterName}`}></div> */}
     </div>
   );
 };

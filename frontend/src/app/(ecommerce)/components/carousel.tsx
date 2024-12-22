@@ -1,3 +1,6 @@
+// This the carousel that is for the product page
+// This carousel has been used 2 times in the product page
+
 "use client"
 
 import React from 'react';

@@ -1,0 +1,25 @@
+.carouselFeatureSoloProduct {
+    background-image: url('../../../public/anime_background_with_green_field.png');
+    height: 482px;
+    width: 449px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: visible;
+    
+
+    .carousel-item {
+       width: 100%;
+       height: auto;
+       position : relative;
+       overflow: hidden;
+       img {
+            // position: absolute;
+            top: -10%;
+            left: 0%;
+            transform: translateX(50%);
+       }
+    }
+
+    
+
+}

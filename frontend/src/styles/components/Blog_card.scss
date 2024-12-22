@@ -1,7 +1,91 @@
 .blogCard{
-
     height: 432px;
-    width: 531px;
-    background: $purpleBlack;
+    // width: 531px;
+    width: 45%;
+    background: rgba(231,231,252,1);
+    padding : 2%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    color : black;
+
+    &:has(.right-side-circle) {
+        background: $purpleBlack;
+        color : white;
+    }
+   
+
+    .grid {
+        display: grid;
+        height: 100%;
+        grid-template-rows: 25% 45% 30% ;
+        &__top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            
+            p {
+                font-size: 3rem;
+                font-weight: bold;
+                
+                
+            }
+        }
+
+        &__middle {
+            p {
+                font-size: 1.5rem;
+                max-width: 85%;
+                
+            }
+        }
+
+        &__bottom {
+            &__upper {
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                max-width: 92%;
+            }
+
+            &__lower {
+                display: flex;
+                flex-direction: row;
+                justify-content: start;
+            }
+        }
+    }
+
+   
+
+    a {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: $secondaryColor;
+        display: inline-block;
+        color : white;
+
+        &:hover {
+            transform: scale(.98);
+            background-color: red;
+        }
+    }
+
+    $width: 132px;
+    $rightPositionned: $width /2 *-1;
+    .right-side-circle {
+        position: absolute;
+        width: $width;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #090909;
+        right: $rightPositionned; 
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+   
 
 }
