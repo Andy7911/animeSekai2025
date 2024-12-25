@@ -2,5 +2,64 @@
 
     position: relative;
 
+    &__left {
+        width: calc(100% - 355px);
+        float: left;
 
+        @media(max-width: $tablet-h) {
+            float: none;
+            width: calc(100%);
+        }
+    }
+
+
+    &__right {
+        width: 330px;
+        float: right;
+
+        @media(max-width: $tablet-h) {
+            float: none;
+            width: 100%;
+        }
+    }
+
+    .filter {
+
+        padding: 15px 15px 0px 15px;
+        position: relative;
+        border-radius: 5px;
+        background-color: #201F2D;
+        height: 300px;
+        width: 330px;
+        margin-bottom: 20px;
+
+        h4 {
+            color: #fff;
+            font-size: 25px;
+            margin-bottom: 10px;
+            font-family: "Oswald", sans-serif;
+            font-weight: 500;
+        }
+
+        &__item {
+            width: calc(50% - 8px);
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__dropdown {
+            padding: 3px;
+            display: block;
+            border-radius: 5px;
+            background-color: #242330;
+            margin-bottom: 10px;
+            text-align: center;
+            box-shadow: 5px 8px 13px 0px rgba(0, 0, 0, 0.16);
+            color: #fff
+        }
+    }
 }
