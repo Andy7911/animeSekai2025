@@ -4,6 +4,7 @@ import CarouselFeaturePage from '../components/carousel-feature-page';
 import BlogCard from '../components/feature_components/blog_card';
 import AboutCard from '../components/feature_components/about_card';
 import CarouselFeatureSoloProduct from '../components/carousel-feature-solo-product';
+import CarouselFeatureCollectionProduct from '../components/carousel-feature-collection-product';
 
 // TODO Feature page
 // The background color, the manga image, and the problaby the pokeball style image will need to change
@@ -61,7 +62,7 @@ const FeaturePage = () => {
         </section>
 
         <section className="insight-idea-section">
-            <div className="flex justify-between">
+            <div className="insight-idea-section__blogCard">
                 <BlogCard title="Blog" body="Comment choisir la meilleure figurine pour votre collection" right_side_circle={true}/>
                 <BlogCard title="Astuces" body="Décrouvez nos rubriques Actuces" />
             </div>
@@ -71,8 +72,10 @@ const FeaturePage = () => {
         </section>
 
         <section className='feature-product-section'>
-            <div className='grid'>
+            <div className='feature-product-section__grid'>
                 <CarouselFeatureSoloProduct parameterName='solo-product' />
+      
+                {/* <CarouselFeatureCollectionProduct /> */}
             </div>
             
             <div className="feature-product-section__see-offers">

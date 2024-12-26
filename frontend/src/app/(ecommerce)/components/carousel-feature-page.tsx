@@ -31,7 +31,7 @@ interface SwiperParameter {
 
 const CarouselFeaturePage : React.FC<SwiperParameter> = ( { parameterName, width = "100%", navigationButtonOffset = "-10%" , spaceBetweenSlide = 50, slidesPerView = 1  }) => {
   return (
-    <div style={{ position: 'relative', width: width , margin : '0 auto' }}  className="carousel-container-feature">
+    <div className="carousel-container-feature">
 
       <Swiper
         key={parameterName}
