@@ -1,11 +1,13 @@
 .carouselFeatureSoloProduct {
+    flex: 1 1 0; // The parent elements have been set to display flex
     background-image: url('../../../public/anime_background_with_green_field.png');
     // height: 482px;
     // max-height: 90dvh;
 
-    max-width: 449px;
+    // min-width: 0;
+    max-width: 31dvw;
     // background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
     margin: 0 auto;
     border-radius: 15px;
   
@@ -16,12 +18,13 @@
     }
    
     .carousel-item {
-       width: 100%;
+       max-width: 100%;
        height: 482px * .8;
       
        
        display: flex;
        align-items: end;
+       min-width: 0;
 
        &__info {
             display: flex;
@@ -32,7 +35,8 @@
        }
        
        &__image {
-            min-height: 482px * 0.8;
+            max-width: 73% ;
+            min-height: 482px * 0.75;
             max-height: 90%;
             position: absolute;
             top: -15%;
@@ -41,7 +45,21 @@
        }
     }
 
+
+    @media (max-width: $tablet-h) {
+        .carousel-item {
+            &__info {
+                 font-size: 2.0rem;
+                 text-overflow: ellipsis;
+            }
+       }
+    }
+
     @media (max-width: $mobile) {
         max-width: 90dvw;
+        min-width: 0;
+        margin: 0;
+
+        
     }
 }

@@ -1,32 +1,56 @@
 .carouselFeatureCollectionProduct {
-    background-image: url('../../../public/feature-page-collection-product-background.png');
-    background-size: 100%;
+     flex: 3 1 0; // The parent element has been set to display flex;
+     background-image: url('../../../public/feature-page-collection-product-background.png');
+     background-size: cover;
+     border-radius: 10px;
+     min-width: 0;
 
-
-    .carousel-item {
-        width: 100%;
-        height: 482px * .8;
-       
-        
-        display: flex;
-        align-items: end;
- 
-        &__info {
-             display: flex;
-             justify-content: space-between;
-             width: 100%;
-             padding: 20px;
-             font-size: 3rem;
-        }
-        
-        &__image {
-             min-height: 482px * 0.8;
-             max-height: 90%;
-             position: absolute;
-             top: -15%;
-             left: 50%;
-             transform: translateX(-50%);
-        }
+     //     max-width: 61dvw;
+     .carouselFeatureCollectionProductSwiperInit {
+          overflow-y: visible;
+          overflow-x: clip;
      }
- 
+
+     .carousel-item {
+          width: 100%;
+          height: 482px * .8;
+          display: flex;
+          min-width: 0;
+          align-items: end;
+
+
+          &__info {
+               display: flex;
+               justify-content: center;
+               width: 100%;
+               padding: 20px;
+               font-size: 3rem;
+          }
+
+          &__image {
+               max-width: 73%;
+               min-height: 482px * 0.75;
+               max-height: 90%;
+               position: absolute;
+               top: -15%;
+               left: 50%;
+               transform: translateX(-50%);
+          }
+     }
+
+     @media (max-width: $tablet-h) {
+
+          .carousel-item {
+               &__info {
+                    font-size: 2.5rem;
+                    text-overflow: ellipsis;
+               }
+          }
+        
+     }
+
+     @media (max-width : $mobile) {
+          max-width: 100%;
+     }
+
 }

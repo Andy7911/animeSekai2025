@@ -15,43 +15,6 @@
         width: 100%;
     }
 
-    // .carousel-item {
-    //     display: grid;
-    //     grid-template-columns: 75% 25%;
-    //     height: 100%;
-
-    //     &__left {
-    //         overflow: hidden;
-    //         /* The big image */
-    //         img {
-    //             height: 100%;
-    //             width: 100%;
-    //             object-fit: cover;
-    //             padding-left: 30px;
-    //             padding-right: 10%;
-    //         }
-    //     }
-
-    //     &__right {
-    //         display: grid;
-    //         grid-template-rows: repeat(2, 1fr);
-
-    //         &__upper-logo {
-    //             position: relative;
-    //             /* The img  */
-    //             img {
-    //                 position: absolute;
-    //                 bottom: 15%;
-    //             }
-    //         }
-    //     }
-
-    //     .button {
-    //         padding: 15px 25px;
-    //         border : 1px solid white;
-    //         border-radius: 5px;
-    //     }
-    // }
 
     .parallax-scrolling-section {
         background-image: url('/gundam-manga-image.webp');
@@ -64,6 +27,7 @@
 
     .exploration-section {
         padding-top: 3%;
+        padding-bottom: 3%;
         position: relative;
         background-color: white;
         color : black;
@@ -106,14 +70,20 @@
     .feature-product-section {
         margin-top: 150px;
         margin-bottom: 150px;
-        overflow: visible;
+        // overflow: visible;
         padding-left: $padding-horizontal;
         padding-right: $padding-horizontal;
 
         &__grid {
-            display: grid;
+        
+            display: flex;
+            flex-direction: row;
+            min-width: 0;
+            column-gap: 10%;
+            // width: 100dvw ;
             position: relative;
-            grid-template-columns: repeat(2,1fr);
+            
+            
             // overflow: visible;
             
         }
@@ -145,12 +115,52 @@
        }
     }
 
+    @media (max-width: $tablet-h) {
+        .exploration-section {
+            height: auto;
+
+            &__content {
+                p {
+                    margin-top: 10px
+                }
+            }
+        }
+    }
+
     @media (max-width : $mobile) {
+
+        .exploration-section {
+            height: auto;
+
+            p:first-child {
+                width: auto;
+            }
+
+            &__content {
+                img {
+                    margin: 0 auto;
+                }
+            }
+
+             .flex {
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 20px;
+             }
+        }
 
         .feature-product-section {
             &__grid {
                 display: grid;
                 grid-template-columns: 1fr;
+                column-gap: 0;
+                row-gap: 90px;
+            }
+
+            &__see-offers {
+                a {
+                    display: none;
+                }
             }
         }
 

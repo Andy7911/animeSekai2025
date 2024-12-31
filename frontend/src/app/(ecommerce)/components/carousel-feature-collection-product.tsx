@@ -13,7 +13,7 @@ import Image from 'next/image';
 const CarouselFeatureCollectionProduct = () => {
     return <div className='carouselFeatureCollectionProduct'>
           <Swiper
-        className="carouselFeatureSoloProductSwiperInit"
+        className="carouselFeatureCollectionProductSwiperInit"
         key={"solo-product1"}
         id={"solo-product1"}
         autoHeight={true}
@@ -37,6 +37,16 @@ const CarouselFeatureCollectionProduct = () => {
         // }}s
         // loop={true}
       >
+        <SwiperSlide>
+          <div className="carousel-item">
+            <Image className="carousel-item__image" unoptimized width={292} height={482 * 0.8} src="/gundamCollectionBox.png" alt="Kakashi Image"/>
+            <div className="carousel-item__info">
+              <p className="carousel-item__info__name">Gundam Collection</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
+
         <SwiperSlide>
           <div className="carousel-item">
             <Image className="carousel-item__image" unoptimized width={292} height={482 * 0.8} src="/gundamCollectionBox.png" alt="Kakashi Image"/>

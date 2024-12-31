@@ -14,6 +14,9 @@ interface ICarousel {
 }
 
 const CarouselFeatureSoloProduct : React.FC<ICarousel> = ({parameterName}) => {
+
+  
+
   return (
     <div
       className="carouselFeatureSoloProduct"
@@ -42,6 +45,7 @@ const CarouselFeatureSoloProduct : React.FC<ICarousel> = ({parameterName}) => {
         //     el : "swiper-pagination",
         // }}s
         // loop={true}
+        
       >
         <SwiperSlide>
           <div className="carousel-item">

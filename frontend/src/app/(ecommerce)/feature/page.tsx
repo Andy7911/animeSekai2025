@@ -13,35 +13,20 @@ import CarouselFeatureCollectionProduct from '../components/carousel-feature-col
 // The change the background color of the Carousel-section and the parallax-scrolling-section
 
 
+
 const FeaturePage = () => {
+
     return <div className='feature'>
         <section className='carousel-section'>
-    
-            {/* Added the unoptimized prop for better image rendering */}
-            {/* <div className="carousel-item">
-                <div className='carousel-item__left'>
-                    
-                    <Image src="/gundam.png" height={200} width={200} alt="gundam" unoptimized />
-                </div>
-                <div className='carousel-item__right'>
-                    <div className="carousel-item__right__upper-logo">
-                        <Image src="/Mobile_Suit_Gundam_SEED_logo.png" width={297} height={192} alt='Gundam Seed Image'/>
-                    </div>
-                    <div className="carousel-item__right__lower-button">
-                        <button className="button">View More</button>
-                    </div>
-                </div>
-            </div> */}
-            
+
             <CarouselFeaturePage parameterName={'carousel'}  />
         </section>
         <section className="parallax-scrolling-section">
           {/* background: url('....') in SCSS */}  
         </section>
+
         {/* Section exploration */}
         <section className='exploration-section'>
-
-            
 
             <p>Explorer des Figurines et acessior des vos animes preferer</p>
             <div className='flex'>
@@ -75,10 +60,11 @@ const FeaturePage = () => {
             <div className='feature-product-section__grid'>
                 <CarouselFeatureSoloProduct parameterName='solo-product' />
       
-                {/* <CarouselFeatureCollectionProduct /> */}
+                <CarouselFeatureCollectionProduct />
             </div>
             
             <div className="feature-product-section__see-offers">
+                
                 <a href="/filter">See All</a>
             </div>
         </section>

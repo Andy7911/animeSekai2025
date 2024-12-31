@@ -86,8 +86,38 @@
         transform: translateY(-50%);
     }
 
+    $w_right-side-circle: 120px;
+    $rightPositionned : $w_right-side-circle /2 *-1;
+    @media (max-width : $tablet-h) {
+        .right-side-circle {
+            width: $w_right-side-circle;
+            right: $rightPositionned;
+            height: 180px;
+        }
+
+        .grid {
+            &__middle {
+                p {
+                    max-width: 80%;
+                }
+            }
+
+            &__bottom {
+                &__upper {
+                    max-width: 87%;
+                }
+            }
+        }
+
+        a {
+            font-size: 1.25rem;
+            padding: 8px 16px;
+        }
+    }
+
 
     @media (max-width : $mobile) {
         width: 100%; 
+
     }
 }

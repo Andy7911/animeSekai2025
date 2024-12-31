@@ -1,7 +1,9 @@
 .carousel-container-feature {
-    
+
     max-width: 100%;
     width: 100%;
+    min-width: 0;
+    
     margin: 0 auto;
     position: relative;
     // .img {
@@ -9,69 +11,72 @@
     //   height: auto;
     //   border-radius: 8px;
     // }
-  
+
     /* */
-  
-    
+
+
     //  The .carousel-section's background-color will probably be overide
     //   depending the current anime presentation
-      .carousel-item {
-          display: grid;
-          grid-template-columns: 75% 25%;
-          height: 100dvh;
-  
-          &__left {
-              overflow: hidden;
-              /* The big image */
-              img {
-                  height: 100%;
-                  width: 100%;
-                  object-fit: cover;
-                  padding-left: 30px;
-                  padding-right: 10%;
-              }
-          }
-  
-          &__right {
-              display: grid;
-              grid-template-rows: repeat(2, 1fr);
-  
-              &__upper-logo {
-                  position: relative;
-                  /* The img  */
-                  img {
-                      position: absolute;
-                      bottom: 15%;
-                  }
-              }
-          }
-  
-          .button {
-              padding: 15px 25px;
-              border : 1px solid white;
-              border-radius: 5px;
-          }
-      }
+    .carousel-item {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        height: 100dvh;
+
+        &__left {
+            overflow: hidden;
+
+            /* The big image */
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                padding-left: 30px;
+                padding-right: 10%;
+            }
+        }
+
+        &__right {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+
+            &__upper-logo {
+                position: relative;
+
+                /* The img  */
+                img {
+                    position: absolute;
+                    bottom: 15%;
+                    width: 70%;
+                }
+            }
+        }
+
+        .button {
+            padding: 15px 25px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    }
 
 
 
-      /* Default pagination bullets */
-.swiper-pagination-bullet {
-    width: 25px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* Less white */
-    border-radius: 0; /* Rectangular shape */
-    margin: 0 5px; /* Spacing between bullets */
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Active bullet */
-  .swiper-pagination-bullet-active {
-    background-color: rgba(255, 255, 255, .78); /* Fully white */
-  }
-  
+    /* Default pagination bullets */
+    .swiper-pagination-bullet {
+        width: 25px;
+        height: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        /* Less white */
+        border-radius: 0;
+        /* Rectangular shape */
+        margin: 0 5px;
+        /* Spacing between bullets */
+        transition: background-color 0.3s ease;
+    }
 
+    /* Active bullet */
+    .swiper-pagination-bullet-active {
+        background-color: rgba(255, 255, 255, .78);
+        /* Fully white */
+    }
 
-    
-  }
-  
+}
