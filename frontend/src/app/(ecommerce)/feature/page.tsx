@@ -13,17 +13,22 @@ import CarouselFeatureCollectionProduct from '../components/carousel-feature-col
 // The change the background color of the Carousel-section and the parallax-scrolling-section
 
 
+const FeaturePage :  React.FC = async () => {
 
-const FeaturePage = () => {
+    const response = await fetch("http://localhost:3001/anime");
+
+    const animes : Anime [] = await response.json();
+    console.log(animes);
+
 
     return <div className='feature'>
         <section className='carousel-section'>
 
-            <CarouselFeaturePage parameterName={'carousel'}  />
+            <CarouselFeaturePage animes={animes}    />
         </section>
-        <section className="parallax-scrolling-section">
-          {/* background: url('....') in SCSS */}  
-        </section>
+        {/* <section className="parallax-scrolling-section">
+      
+        </section> */}
 
         {/* Section exploration */}
         <section className='exploration-section'>

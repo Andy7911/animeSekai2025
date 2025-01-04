@@ -1,14 +1,13 @@
 // This is the carousel that is on the top of the Feature Page
 
-"use client"
+"use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules' ;
-import { Pagination } from 'swiper/modules';
-import { Autoplay } from 'swiper/modules';
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import Image from "next/image";
-
 
 // import './swiper-bundle.min.css'
 
@@ -16,86 +15,83 @@ import "swiper/swiper-bundle.css";
 
 
 
-// Swiper styles
 
-interface SwiperParameter {
-  parameterName : string,
-  width?: string // ex : 75%,
-  navigationButtonOffset? : string // ex 10%
-  navgiationButtonfontSize? : string
-  spaceBetweenSlide? : number,
-  slidesPerView? : number
-
+interface  CarouselProps {
+  animes : Anime [];
 }
 
+const CarouselFeaturePage: React.FC<CarouselProps> = ({animes}) => {
 
-const CarouselFeaturePage : React.FC<SwiperParameter> = ( { parameterName, width = "100%", navigationButtonOffset = "-10%" , spaceBetweenSlide = 50, slidesPerView = 1  }) => {
+  const [backgroundImage, setBackgroundImage] = useState<string>(animes[0].manga_image_path);
+
+  const handleSlideChange = (swiper :any ) => {
+
+  
+    // setCurrentSlide(swiper.activeIndex);
+    
+    // Change the parrallax anime background
+    // parrallaxEL.current.style.backgroundImage = animes[swiper.activeIndex].manga_image_path;
+    // console.log("Background Image " +  parrallaxEL.current?.style.background);
+    // setCurrentSlide(swiper.activeIndex);
+    setBackgroundImage(backgroundImage=> backgroundImage = animes[swiper.activeIndex].manga_image_path);
+
+   
+  };
+
   return (
-    <div className="carousel-container-feature">
-
-      <Swiper
-        key={parameterName}
-        id={parameterName}
-        autoHeight={false}
-        direction="horizontal"
-        modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={spaceBetweenSlide}
-        slidesPerView={slidesPerView}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
-        // navigation={{ 
-        //   nextEl: `.swiper-button-next${parameterName}`,
-        //   prevEl: `.swiper-button-prev${parameterName}`,
-        // }}
-        pagination={{ clickable: true }}
-        // pagination= {{
-        //     el : "swiper-pagination",
-        // }}s
-        // loop={true}
-      >
-        <SwiperSlide>
-        <div className="carousel-item">
-                <div className='carousel-item__left'>
-                    {/* Added the unoptimized prop for better image rendering */}
-                    <Image src="/gundam.png" height={200} width={200} alt="gundam" unoptimized />
+    <div> {/* This div has no class  */}
+      <div className="carousel-container-feature">
+        <Swiper
+          key={"carousel"}
+          id={"carousel"}
+          autoHeight={false}
+          direction="horizontal"
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          onSlideChange={handleSlideChange}
+        >
+          
+          {animes.map(anime => (
+            <SwiperSlide key={anime.id}>
+            <div style={{backgroundColor : `${anime.carousel_background_color}`}} className="carousel-item">
+              <div className="carousel-item__left">
+                {/* Added the unoptimized prop for better image rendering */}
+                <Image
+                  src={anime.anime_image_path}
+                  height={200}
+                  width={200}
+                  alt="gundam"
+                  unoptimized
+                />
+              </div>
+              <div className="carousel-item__right">
+                <div className="carousel-item__right__upper-logo">
+                  <Image
+                    src={anime.anime_image_logo_path}
+                    width={297}
+                    height={192}
+                    alt="Gundam Seed Image"
+                  />
                 </div>
-                <div className='carousel-item__right'>
-                    <div className="carousel-item__right__upper-logo">
-                        <Image src="/Mobile_Suit_Gundam_SEED_logo.png" width={297} height={192} alt='Gundam Seed Image'/>
-                    </div>
-                    <div className="carousel-item__right__lower-button">
-                        <button className="button">View More</button>
-                    </div>
+                <div className="carousel-item__right__lower-button">
+                  <button style={{ '--hover-color' : `${anime.carousel_background_color}`}} className="button">View More</button>
                 </div>
+              </div>
             </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="carousel-item bg-orange-600">
-                <div className='carousel-item__left'>
-                   
-                    <Image src="/goku_flying.png" height={200} width={200} alt="gundam" unoptimized />
-                </div>
-                <div className='carousel-item__right'>
-                    <div className="carousel-item__right__upper-logo">
-                        <Image src="/dragon-ball-z-logo.png" width={297} height={192} alt='Gundam Seed Image'/>
-                    </div>
-                    <div className="carousel-item__right__lower-button">
-                        <button className="button">View More</button>
-                    </div>
-                </div>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-      
-        </SwiperSlide>
-        <SwiperSlide>
-        
-        </SwiperSlide>
-      </Swiper>
+          </SwiperSlide>
+          )
+          )}
+        </Swiper>
+      </div>
+      {/** The css is located in the Feature.scss  */}
+      <section style={ {backgroundImage: `url(${backgroundImage})` }} id="parrallax-scrolling-section" className="parallax-scrolling-section">
+          {/* background: url('....') in SCSS */}  
+        </section>
     </div>
   );
 };
+
 
 export default CarouselFeaturePage;

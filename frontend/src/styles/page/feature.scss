@@ -17,12 +17,12 @@
 
 
     .parallax-scrolling-section {
-        background-image: url('/gundam-manga-image.webp');
         min-height: 482px;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        transition: background-image 0.5s ease-in-out;
     }
 
     .exploration-section {
@@ -115,7 +115,12 @@
        }
     }
 
-    @media (max-width: $tablet-h) {
+/* Media Query section */
+
+    // @media (max-width: $de) {
+        
+    // }
+    @media (max-width: $desktop) {
         .exploration-section {
             height: auto;
 

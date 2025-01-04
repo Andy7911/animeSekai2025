@@ -22,4 +22,28 @@
         width: 266px;
     }
 
+    @media (max-width : $mobile) {
+        // height: 350px;
+        padding: 6%;
+
+        img {
+            height: 205px;
+            width: 186px;
+            transform: translate(-50%,-30%);
+        }
+    }
+
+    @media (max-height : $mobile-m) {
+        height: 350px;
+
+        img {
+            height: 191px;
+            width: 171px;
+            transform: translate(-50%,-30%);
+        }
+    }
+
+    @media (max-height : $mobile-s) {
+        height: 375px;
+    }
 }

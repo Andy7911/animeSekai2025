@@ -3,18 +3,26 @@
     {
       "id": 1,
       "title": "Gundam",
-      "anime_image_path": "gundam.png",
-      "anime_image_logo_path" : "Mobile_Suit_Gundam_SEED_logo.png",
-      "manga_image_path": "gundam-manga-image.webp",
+      "anime_image_path": "/gundam.png",
+      "anime_image_logo_path" : "/Mobile_Suit_Gundam_SEED_logo.png",
+      "manga_image_path": "/gundam-manga-image.webp",
       "carousel_background_color": "#8685EF"
     },
     {
       "id": 2,
       "title": "Dragon Ball",
-      "anime_image_path": "goku_flying.png",
-      "anime_image_logo_path" : "dragon-ball-z-logo-png",
-      "manga_image_path": "dragon-ball-z-fight-scene.jpg",
+      "anime_image_path": "/goku_flying.png",
+      "anime_image_logo_path" : "/dragon-ball-z-logo.png",
+      "manga_image_path": "/dragon-ball-z-fight-scene.jpg",
       "carousel_background_color": "#EA580C"
+    },
+    {
+      "id": 3,
+      "title": "Gundam",
+      "anime_image_path": "/gundam.png",
+      "anime_image_logo_path" : "/Mobile_Suit_Gundam_SEED_logo.png",
+      "manga_image_path": "/gundam-manga-image.webp",
+      "carousel_background_color": "#8685EF"
     }
   ]
 }

@@ -4,6 +4,9 @@
      background-size: cover;
      border-radius: 10px;
      min-width: 0;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     
 
      //     max-width: 61dvw;
      .carouselFeatureCollectionProductSwiperInit {
@@ -25,6 +28,10 @@
                width: 100%;
                padding: 20px;
                font-size: 3rem;
+               
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               overflow: hidden;
           }
 
           &__image {
@@ -43,7 +50,7 @@
           .carousel-item {
                &__info {
                     font-size: 2.5rem;
-                    text-overflow: ellipsis;
+                    // text-overflow: ellipsis;
                }
           }
         
