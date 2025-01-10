@@ -95,13 +95,53 @@ export default async function Home() {
 
             </div>
 
+            <input type="text" />
+          </div>
+
+
+          <a className="btn">
+            <span className="btn__text">Filter <i className="fa-solid fa-shield-halved">
+            </i></span>
+
+          </a>
+
+        </div>
+        <div className="weekly">
+
+          <div className="weekly__top">
+            <div className="weekly__day">
+              Days
+            </div>
+            <div className="weekly__day">
+              Week
+            </div>
+            <div className="weekly__day">
+              Mouth
+            </div>
 
           </div>
-          <input type="text" />
+          <div className="weekly__content">
 
-          <a className="btn"> 
-<span className="btn__text">Filter</span>
-          </a>
+            <div className="weekly__img_wrap">
+              <Image src="http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png" alt="main anime at this moment"   width={296} height={196}/>
+              <div className="weekly__img_text">
+              <span> 1</span>
+              <h4>The new hero of grave</h4>
+              </div>
+            </div>
+<div className="weekly__card">
+  <span className="weekly__number"> 1</span>
+  <Image src='http://localhost:1337/uploads/tokyo_reverger_c9ae4afe81.png'  width={30} height={40}  alt="Photo card"/>
+  <div className="weekly__card_content">
+<h4>Tokyo Revenger</h4>
+<div className="weekly__view">
+<span><i className="fa-solid fa-eye"></i>10,000</span>
+</div>
+
+  </div>
+
+</div>
+          </div>
 
         </div>
 

@@ -22,6 +22,7 @@ export default function RootLayout({
             <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Share+Tech&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/>
               <link href="https://fonts.googleapis.com/css2?family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
               <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Share+Tech&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"></link>
+              <script src="https://kit.fontawesome.com/819d9a9b02.js" crossOrigin="anonymous"></script>
             </head>
             <body
 
