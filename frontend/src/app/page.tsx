@@ -123,28 +123,64 @@ export default async function Home() {
           <div className="weekly__content">
 
             <div className="weekly__img_wrap">
-              <Image src="http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png" alt="main anime at this moment"   width={296} height={196}/>
+              <Image src="http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png" alt="main anime at this moment" width={296} height={196} />
               <div className="weekly__img_text">
-              <span> 1</span>
-              <h4>The new hero of grave</h4>
+                <span> 1</span>
+                <h4>The new hero of grave</h4>
               </div>
             </div>
-<div className="weekly__card">
-  <span className="weekly__number"> 1</span>
-  <Image src='http://localhost:1337/uploads/tokyo_reverger_c9ae4afe81.png'  width={30} height={40}  alt="Photo card"/>
-  <div className="weekly__card_content">
-<h4>Tokyo Revenger</h4>
-<div className="weekly__view">
-<span><i className="fa-solid fa-eye"></i>10,000</span>
-</div>
+            <div className="weekly__cards">
 
-  </div>
 
-</div>
+              <div className="weekly__card">
+                <span className="weekly__number"> 1</span>
+                <Image src='http://localhost:1337/uploads/tokyo_reverger_c9ae4afe81.png' width={40} height={40} alt="Photo card" />
+                <div className="weekly__card_content">
+                  <h4>Tokyo revenger season 2</h4>
+                  <div className="weekly__view">
+                    <span><i className="fa-solid fa-eye"></i>10,000</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div className="recently">
+
+          <div className="recently__top">
+
+            <h3>Recently add</h3>
+            <a className="btn" href=""> View All</a>
+          </div>
+          <div className="recently__content">
+            <div className="recently__card">
+            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+            <div className="recently__card_text">
+                  <h4>Jujutsu kaisen</h4>
+                  <span>2018 EP. 12/14</span>
+            </div>
+            </div>
+            <div className="recently__card">
+            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+            <div className="recently__card_text">
+                  <h4>Jujutsu kaisen</h4>
+                  <span>2018 EP. 12/14</span>
+            </div>
+            </div>
+            <div className="recently__card">
+            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+            <div className="recently__card_text">
+                  <h4>Jujutsu kaisen</h4>
+                  <span>2018 EP. 12/14</span>
+            </div>
+            </div>
           </div>
 
         </div>
-
       </div>
     </div>
   );

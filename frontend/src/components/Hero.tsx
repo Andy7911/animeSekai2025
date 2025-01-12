@@ -82,7 +82,8 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
                     {Description}
                 </p>
                 <div className='hero__btn_wrap'>
-                    <a href="" className='button-rounded'>watch</a>
+                    <a href="" className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true"></i>
+                    </span></a>
                     <a href="" className='button-outline'>Add to watch</a>
                 </div>
             </div>

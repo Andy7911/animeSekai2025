@@ -26,7 +26,7 @@
     .filter {
         display: flex;
         flex-direction: column;
-       
+
         position: relative;
         border-radius: 5px;
         background-color: #201F2D;
@@ -34,7 +34,7 @@
         width: 330px;
         margin-bottom: 20px;
         justify-content: space-between;
-        
+
 
         h4 {
             color: #fff;
@@ -49,13 +49,17 @@
             width: calc(50% - 8px);
         }
 
-        &__content { 
+        &__content {
             padding: 15px 15px 0px 15px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            input{
+
+            input {
                 width: 100%;
+                background-color: transparent;
+                border: 1px solid #8685EF;
+                border-radius: 5px;
             }
         }
 
@@ -69,7 +73,8 @@
             box-shadow: 5px 8px 13px 0px rgba(0, 0, 0, 0.16);
             color: #fff
         }
-        .btn{
+
+        .btn {
             background-color: #8685EF;
             display: flex;
             justify-content: center;
@@ -77,74 +82,150 @@
             padding: 15px 0;
         }
     }
-    .weekly{
-        &__top{
+
+    .weekly {
+        margin-bottom: 50px;
+
+        &__top {
             display: flex;
             border-radius: 15px;
-        }   &__number{
-                border: 1px solid #2e2e2e;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 30px;
-                border-radius: 5px;
-                padding: 5px 10px;
-                margin-right: 20px;
-                max-height: 50px;
-                color: #faf8ff;
-            }
-        &__card{
-            display: flex;
-            padding: 5px;
-         
         }
-        &__day{
-            &:first-child{
-              border-radius: 15px 0px 0px;
+
+        &__number {
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 20px;
+            max-height: 50px;
+            color: #faf8ff;
+        }
+
+        &__cards {
+            background-color: #211F42;
+        }
+
+        &__card {
+            display: flex;
+            padding: 10px 5px;
+
+
+        }
+
+        &__card_content {
+            margin-left: 10px;
+        }
+
+        &__view {
+            i {
+                margin-right: 5px;
             }
-            &:last-child{
+        }
+
+        &__day {
+            &:first-child {
+                border-radius: 15px 0px 0px;
+            }
+
+            &:last-child {
                 border-radius: 0px 15px 0px 0px;
-              }
+            }
+
             text-align: center;
             padding: 5px;
             flex: 1;
             background-color: #8685EF;
         }
-        &__img_text{
-            display: flex; 
+
+        &__img_text {
+            display: flex;
             position: absolute;
             justify-content: center;
             align-items: center;
             bottom: 10px;
             left: 5px;
             font-weight: 200;
-            font-family: $oswald;            
-            h4{
+
+            h4 {
+                font-family: $oswald;
                 font-weight: 400;
                 margin-left: 15px;
             }
         }
-        &__img_wrap{
+
+        &__img_wrap {
             position: relative;
-            
-            img{
+
+            img {
                 display: block;
                 width: 100%;
                 height: auto;
-              
+
             }
-            span{
+
+            span {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 20px;
+                font-size: 30px;
                 border-radius: 5px;
                 padding: 5px 10px;
-             text-align: center;
+                text-align: center;
                 background-color: #fff;
                 color: black;
-              
+                max-height: 50px;
+
             }
         }
+    }
+
+    .recently {
+        background-color: #211F42;
+        border-radius: 15px;
+        padding: 25px 15px;
+
+        &__top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 50px;
+
+            h3 {
+                font-size: 25px;
+                text-transform: uppercase;
+            }
+
+            a {
+                border-radius: 5px;
+                padding: 5px;
+                background-color: #242330;
+                box-shadow: 5px 5px 15px 5px #000000;
+            }
+        }
+
+        &__card {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        &__card_text {
+
+            margin-left: 20px;
+            display: block;
+        }
+    }
+
+    .watching {
+        h4 {
+            text-align: center;
+            font-size: 25px;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 600; 
+        }
+    }
+    .schedule{
+        
     }
 }
