@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../styles/globals.scss";
 import './globals.scss';
 import { Suspense } from "react";
+import Footer from "./(ecommerce)/components/footer";
 // import Header from "../components/organisms/Header";
 // import Footer from "../components/organisms/Footer";
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Suspense fallback={<div> loading ...</div>}>
           {children}
         </Suspense>
+        <Footer/>
       </body>
     </html>
   );

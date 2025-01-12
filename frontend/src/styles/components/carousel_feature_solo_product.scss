@@ -29,15 +29,25 @@
        &__info {
             display: flex;
             justify-content: space-between;
+            flex-wrap: nowrap;
+
             width: 100%;
             padding: 20px;
-            font-size: 3rem;
+            font-size: 2rem;
+            
+            p {
+                white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            }
        }
        
        &__image {
-            max-width: 73% ;
-            min-height: 482px * 0.75;
-            max-height: 90%;
+            height: auto;
+            // max-width: 73% ;
+            width: 200px;
+            // min-height: 482px * 0.75;
+            // max-height: 90%;
             position: absolute;
             top: -15%;
             left: 50%;
@@ -48,11 +58,22 @@
 
     @media (max-width: $tablet-h) {
         .carousel-item {
+            &__image {
+                width: 190px;
+            }
             &__info {
-                 font-size: 2.0rem;
+                 font-size: 1.75rem;
                  text-overflow: ellipsis;
             }
        }
+    }
+
+    @media (max-width : $tablet-v) {
+        .carousel-item {
+            &__image {
+                width: 170px;
+            }
+        }
     }
 
     @media (max-width: $mobile) {
@@ -60,6 +81,10 @@
         min-width: 0;
         margin: 0;
 
-        
+        .carousel-item {
+            &__image {
+                width: 190px;
+            }
+        }  
     }
 }

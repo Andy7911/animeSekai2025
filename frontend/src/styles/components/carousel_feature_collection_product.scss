@@ -4,8 +4,7 @@
      background-size: cover;
      border-radius: 10px;
      min-width: 0;
-     white-space: nowrap;
-     text-overflow: ellipsis;
+
      
 
      //     max-width: 61dvw;
@@ -27,17 +26,23 @@
                justify-content: center;
                width: 100%;
                padding: 20px;
-               font-size: 3rem;
+               font-size: 2rem;
                
-               white-space: nowrap;
-               text-overflow: ellipsis;
-               overflow: hidden;
+               p {
+                    
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    
+               }
           }
 
           &__image {
-               max-width: 73%;
-               min-height: 482px * 0.75;
-               max-height: 90%;
+               // max-width: 73%;
+               // min-height: 482px * 0.75;
+               // max-height: 90%;
+               width: 345px;
+               height: auto;
                position: absolute;
                top: -15%;
                left: 50%;
@@ -48,16 +53,52 @@
      @media (max-width: $tablet-h) {
 
           .carousel-item {
+               &__image {
+                    width: 265px;
+               }
                &__info {
-                    font-size: 2.5rem;
+                    font-size: 2.0rem;
                     // text-overflow: ellipsis;
                }
           }
         
      }
 
+     @media (max-width : $tablet-v) {
+          .carousel-item {
+               &__image {
+                    width: 170px;
+               }
+          }
+     }
+
      @media (max-width : $mobile) {
           max-width: 100%;
+          &_info {
+               font-size: 2rem;
+          }
+
+          .carousel-item {
+               &__image {
+                    width: 250px;
+               }
+          }
+     }
+
+     @media (max-width : $mobile-m) {
+          .carousel-item {
+               &__image {
+                    width: 175px;
+               }
+          }
+     }
+
+     @media (max-width: $mobile-s) {
+          .carousel-itemd {
+               &__image {
+                     width: 40px;
+               }
+          }
      }
 
 }

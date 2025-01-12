@@ -10,7 +10,7 @@
     // The .carousel-section's background-color will probably be overide
     // depending the current anime presentation
     .carousel-section {
-        background-color: #8685EF;
+        // background-color: #8685EF;
         height: 100%;
         width: 100%;
     }
@@ -31,7 +31,8 @@
         position: relative;
         background-color: white;
         color : black;
-        height: 100dvh;
+        // height: 100dvh;
+        height: auto;
         
         padding-left:  $padding-horizontal;
         padding-right: $padding-horizontal;
@@ -120,9 +121,14 @@
     // @media (max-width: $de) {
         
     // }
-    @media (max-width: $desktop) {
+    @media (max-width: $desktop-l) {
         .exploration-section {
             height: auto;
+        }
+    }
+    @media (max-width: $desktop) {
+        .exploration-section {
+            // height: auto;
 
             &__content {
                 p {
@@ -178,5 +184,11 @@
         }
         
     }
-    
+
+    @media (max-width : $mobile-m) {
+        .parallax-scrolling-section {
+            background-size: cover;
+            min-height: 55dvh;
+        }
+    }  
 }

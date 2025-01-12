@@ -56,6 +56,7 @@
             padding: 15px 25px;
             border: 1px solid #E7E8FC;
             border-radius: 5px;
+            outline: none;
 
             &:hover {
                 transform: scale(.98);
@@ -65,8 +66,6 @@
             }
         }
     }
-
-
 
     /* Default pagination bullets */
     .swiper-pagination-bullet {
@@ -100,10 +99,6 @@
                 }
             }
 
-            &__right {
-                // position: relative;
-            }
-
             .button {
                 border-radius : 20px;
                 padding: 15px 20px;
@@ -130,6 +125,7 @@
         }
 
         .carousel-item {
+        
 
             .button {
                 font-size: 0.65rem;
@@ -140,9 +136,18 @@
 
     @media (max-width: $mobile-m) {
         .carousel-item {
-
+            height: 70dvh;
             .button {
-                font-size: 0.45rem;
+                // font-size: 0.45rem;
+            }
+        }
+    }
+
+    @media (max-width : $mobile-s) {
+        .carousel-item {
+            .button {
+                padding : 10px 20px;
+                font-size: 0.40rem;
             }
         }
     }

@@ -25,21 +25,12 @@ const CarouselFeaturePage: React.FC<CarouselProps> = ({animes}) => {
   const [backgroundImage, setBackgroundImage] = useState<string>(animes[0].manga_image_path);
 
   const handleSlideChange = (swiper :any ) => {
-
-  
-    // setCurrentSlide(swiper.activeIndex);
-    
     // Change the parrallax anime background
-    // parrallaxEL.current.style.backgroundImage = animes[swiper.activeIndex].manga_image_path;
-    // console.log("Background Image " +  parrallaxEL.current?.style.background);
-    // setCurrentSlide(swiper.activeIndex);
     setBackgroundImage(backgroundImage=> backgroundImage = animes[swiper.activeIndex].manga_image_path);
-
-   
   };
 
   return (
-    <div> {/* This div has no class  */}
+    <div className=""> {/* This div has no class  */}
       <div className="carousel-container-feature">
         <Swiper
           key={"carousel"}
