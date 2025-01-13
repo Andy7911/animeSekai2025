@@ -1,8 +1,9 @@
 import Image from "next/image";
-import HeroComponent from "@/components/Hero";
+import HeroComponent from "@/components/Home/Hero";
 import example from '../../public/img/tokyo-thumb.jpeg'
-import Recommend from "@/components/Recommend";
-import LastRealese from "@/components/LastRealese";
+import Recommend from "@/components/Home/Recommend";
+import LastRealese from "@/components/Home/LastRealese";
+import Schedule from "@/components/Home/Schedule";
 
 interface Picture {
   url: String
@@ -53,11 +54,11 @@ export default async function Home() {
 
   let res = await getData();
   const { Hero, Recommends } = res.data;
-  console.log(Hero.anime);
+  
   return (
     <div className="container home">
       <div className="home__left">
-        <HeroComponent Headline={Hero.Headline} Picture={Hero.Picture} Description={Hero.Description} Anime={Hero.anime} gif={Hero.anime.gif} SubHeadline={Hero.SubHeadline} mu />
+        <HeroComponent Headline={Hero.Headline} Picture={Hero.Picture} Description={Hero.Description} Anime={Hero.anime}  SubHeadline={Hero.SubHeadline} />
 
 
         <Recommend />
@@ -68,6 +69,7 @@ export default async function Home() {
           <h4>Vos visionnnement </h4>
 
         </section>
+        <Schedule/>
       </div>
       <div className="home__right">
 
@@ -100,7 +102,7 @@ export default async function Home() {
 
 
           <a className="btn">
-            <span className="btn__text">Filter <i className="fa-solid fa-shield-halved">
+            <span className="btn__text">Filter <i className="fa-solid fa-shield-halved" aria-hidden="true">
             </i></span>
 
           </a>
@@ -138,7 +140,7 @@ export default async function Home() {
                 <div className="weekly__card_content">
                   <h4>Tokyo revenger season 2</h4>
                   <div className="weekly__view">
-                    <span><i className="fa-solid fa-eye"></i>10,000</span>
+                    <span><i className="fa-solid fa-eye" aria-hidden="true"></i>10,000</span>
                   </div>
 
                 </div>
@@ -161,7 +163,7 @@ export default async function Home() {
             <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
             <div className="recently__card_text">
                   <h4>Jujutsu kaisen</h4>
-                  <span>2018 EP. 12/14</span>
+                  <span>2018 EP. 12/14 </span>
             </div>
             </div>
             <div className="recently__card">

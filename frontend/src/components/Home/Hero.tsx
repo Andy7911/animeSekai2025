@@ -2,9 +2,9 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import img from '../../public/img/rengoku.webp'
-import gif from '../../public/img/demon-slayer-gif-converter.gif';
-import music from '../../public/audio/demon-slayer-rengoku.MP3';
-import star from '../../public/img/Star.png';
+import gif from '../../../public/img/demon-slayer-gif-converter.gif';
+import music from '../../../public/audio/demon-slayer-rengoku.MP3';
+import star from '../../../public/img/Star.png';
 
 
 interface Picture{
@@ -40,7 +40,9 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [hidden, setHidden] = useState(false);
     useEffect(() => {
-
+        if (typeof window !== 'undefined') {
+            console.log('Rendu côté client');
+          }
     }, [hidden])
     const animationPlay = () => {
 
@@ -70,22 +72,22 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
             <div className='hero__left'>
                 <h4> {Headline}</h4>
                 <h1>{SubHeadline}</h1>
-                <div className='categories'>
+               <div className='categories'>
 
-                    <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span>
+                    <span className='hero__tag'>Animation </span> <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span>
 
-                </div>
-                <div className='hero__stars'>
+                </div> 
+                 <div className='hero__stars'>
                     {elements} <span>4.0</span>
                 </div>
                 <p>
                     {Description}
-                </p>
-                <div className='hero__btn_wrap'>
-                    <a href="" className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true"></i>
+                </p> 
+                 <div className='hero__btn_wrap'>
+                    <a href="#" className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true" > </i>
                     </span></a>
-                    <a href="" className='button-outline'>Add to watch</a>
-                </div>
+                    <a href="#" className='button-outline'>Add to watch</a>
+                </div> 
             </div>
             <div className='hero__right'>
                 <div className='hero__img_wrap'>

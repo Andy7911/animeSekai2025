@@ -226,6 +226,56 @@
         }
     }
     .schedule{
-        
+        background-color: #211F42;
+        width: 100%;
+        padding: 0px 30px;
+        h2{
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+        &__card{
+            display: block;
+            background-color: #363453;
+            border-radius: 5px;
+            text-align: center;
+         
+
+        }
+    }
+    .swiper{
+        position: relative;
+        padding: 0px 25px;
+        overflow: hidden; /* Empêche le débordement */
+        width: 95%;      /* Assure que le slider occupe tout l'espace disponible */
+        margin: auto;
+    }
+    .swiper-wrapper{
+        display: flex;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        content: none;
+        position: absolute;
+        bottom: 0;
+        // transform: translateY(-50%);
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+      
+        cursor: pointer;
+        &::after{
+            content: none;
+        }
+    }
+    
+    .swiper-button-prev {
+        left: 0px;
+    }
+    
+    .swiper-button-next {
+        right: 0px;
+    }
+    .swiper-content{
+        position: relative;
     }
 }
