@@ -228,7 +228,7 @@
     .schedule{
         background-color: #211F42;
         width: 100%;
-        padding: 0px 30px;
+        padding: 20px 30px;
         h2{
             font-size: 32px;
             margin-bottom: 50px;
@@ -240,6 +240,21 @@
             text-align: center;
          
 
+        }
+        &__calendar{
+            padding-top: 50px;
+        }
+        &__cell{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            &:nth-child(2n){
+                background-color: #363453;
+            }
+            a{
+                padding: 2px 5px;
+            background-color: #2D2D32;
+        }
         }
     }
     .swiper{

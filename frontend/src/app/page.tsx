@@ -2,8 +2,9 @@ import Image from "next/image";
 import HeroComponent from "@/components/Home/Hero";
 import example from '../../public/img/tokyo-thumb.jpeg'
 import Recommend from "@/components/Home/Recommend";
-import LastRealese from "@/components/Home/LastRealese";
+import LastRealese from "@/components/Home/LastRelease";
 import Schedule from "@/components/Home/Schedule";
+import PopUp from "@/components/Home/PopUp";
 
 interface Picture {
   url: String
@@ -57,6 +58,7 @@ export default async function Home() {
   
   return (
     <div className="container home">
+      <PopUp hidden={true}/>
       <div className="home__left">
         <HeroComponent Headline={Hero.Headline} Picture={Hero.Picture} Description={Hero.Description} Anime={Hero.anime}  SubHeadline={Hero.SubHeadline} />
 

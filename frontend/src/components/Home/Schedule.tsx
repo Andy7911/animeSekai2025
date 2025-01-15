@@ -62,10 +62,13 @@ export default function Schedule() {
             <div className='schedule__calendar'>
 
                 <div className='schedule__cell'>
-
+              <div>  <span>9H00</span> <span>DEMON SLAYER</span></div>
+                <a href='#'> Episode 2 <i className='fa fa-play' aria-hidden="true"></i></a>
                 </div>
                 <div className='schedule__cell'>
-
+                    <div>
+                <span>9H00</span> <span>DEMON SLAYER</span>
+                </div>
                 </div>
 
 
