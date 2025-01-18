@@ -27,10 +27,11 @@ export interface AnimeLastRealeaseAnime extends Struct.ComponentSchema {
 export interface ComponentButton extends Struct.ComponentSchema {
   collectionName: 'components_component_buttons';
   info: {
+    description: '';
     displayName: 'Button';
   };
   attributes: {
-    Text: Schema.Attribute.String;
+    text: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
 }
@@ -45,10 +46,10 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
     CTA: Schema.Attribute.Component<'component.button', true>;
-    Description: Schema.Attribute.Text;
-    Headline: Schema.Attribute.String;
-    Picture: Schema.Attribute.Media<'images'>;
-    SubHeadline: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    headline: Schema.Attribute.String;
+    picture: Schema.Attribute.Media<'images'>;
+    subHeadline: Schema.Attribute.String;
   };
 }
 

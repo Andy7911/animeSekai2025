@@ -133,11 +133,16 @@
             &:last-child {
                 border-radius: 0px 15px 0px 0px;
             }
+            &:hover{
+                background-color: #8685EF;
+            }
 
             text-align: center;
             padding: 5px;
             flex: 1;
-            background-color: #8685EF;
+            background-color: #211F42;
+             
+           
         }
 
         &__img_text {
@@ -223,6 +228,15 @@
             font-size: 25px;
             font-family: "Ubuntu", sans-serif;
             font-weight: 600; 
+        }
+      
+    
+        h5 {
+            text-align: center;
+            font-size: 16px;
+            font-family: "Ubuntu", sans-serif;
+            font-weight: 300;
+            margin-bottom: 50px;
         }
     }
     .schedule{

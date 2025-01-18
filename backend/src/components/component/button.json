@@ -1,11 +1,12 @@
 {
   "collectionName": "components_component_buttons",
   "info": {
-    "displayName": "Button"
+    "displayName": "Button",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Text": {
+    "text": {
       "type": "string"
     },
     "url": {

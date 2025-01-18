@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Langues": {
+    "langues": {
       "type": "enumeration",
       "enum": [
         "VO",

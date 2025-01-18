@@ -7,13 +7,13 @@
   },
   "options": {},
   "attributes": {
-    "Headline": {
+    "headline": {
       "type": "string"
     },
-    "SubHeadline": {
+    "subHeadline": {
       "type": "string"
     },
-    "Picture": {
+    "picture": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -31,7 +31,7 @@
       "relation": "oneToOne",
       "target": "api::anime.anime"
     },
-    "Description": {
+    "description": {
       "type": "text"
     }
   }

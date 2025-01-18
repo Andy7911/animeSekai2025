@@ -417,13 +417,14 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    episodes: Schema.Attribute.Relation<'oneToMany', 'api::episode.episode'>;
     gif: Schema.Attribute.Media<'images'>;
-    Highline_title: Schema.Attribute.String;
+    highline_title: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::anime.anime'> &
       Schema.Attribute.Private;
     musique: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Name: Schema.Attribute.String;
+    name: Schema.Attribute.String;
     notation: Schema.Attribute.Decimal &
       Schema.Attribute.SetMinMax<
         {
@@ -433,7 +434,7 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    Thumbnail: Schema.Attribute.Media<'images'>;
+    thumbnail: Schema.Attribute.Media<'images'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -566,11 +567,11 @@ export interface ApiEpisodeEpisode extends Struct.CollectionTypeSchema {
       'api::episode.episode'
     > &
       Schema.Attribute.Private;
-    Nb_episode: Schema.Attribute.Integer;
+    nb_episode: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     release_date: Schema.Attribute.Date;
-    Season: Schema.Attribute.Integer;
-    Title: Schema.Attribute.String;
+    season: Schema.Attribute.Integer;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -630,7 +631,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Headline: Schema.Attribute.String &
+    headline: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -676,7 +677,7 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     episode: Schema.Attribute.Relation<'oneToOne', 'api::episode.episode'>;
-    Langues: Schema.Attribute.Enumeration<['VO', 'VF', 'VE']>;
+    langues: Schema.Attribute.Enumeration<['VO', 'VF', 'VE']>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::video.video'> &
       Schema.Attribute.Private;

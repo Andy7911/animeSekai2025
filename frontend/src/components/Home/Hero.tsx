@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import img from '../../public/img/rengoku.webp'
 import gif from '../../../public/img/demon-slayer-gif-converter.gif';
-import music from '../../../public/audio/demon-slayer-rengoku.MP3';
 import star from '../../../public/img/Star.png';
 
 
@@ -15,10 +14,10 @@ interface Picture{
   }
   interface Anime{
    id:Number,
-   Name:String,
+   name:String,
    description:String,
    notation:number,
-   Highline_title:String
+   highline_title:String
    categories:String
    gif:Media,
    musique:Media
@@ -27,16 +26,16 @@ interface Picture{
   
   interface Hero { 
  
-  Headline:String,
-  SubHeadline:String,
-  Description:String,
-  Picture: Picture,
+  headline:String,
+  subHeadline:String,
+  description:String,
+  picture: Picture,
   Anime:Anime  
   
   
   }
 
-export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:Hero) {
+export default function Hero({headline,subHeadline,description,picture,Anime,}:Hero) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [hidden, setHidden] = useState(false);
     useEffect(() => {
@@ -70,8 +69,8 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
 
         <div className='hero' onClick={() => animationPlay()} onMouseOut={() => animationStop()}>
             <div className='hero__left'>
-                <h4> {Headline}</h4>
-                <h1>{SubHeadline}</h1>
+                <h4> {headline}</h4>
+                <h1>{subHeadline}</h1>
                <div className='categories'>
 
                     <span className='hero__tag'>Animation </span> <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span>
@@ -81,7 +80,7 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
                     {elements} <span>4.0</span>
                 </div>
                 <p>
-                    {Description}
+                    {description}
                 </p> 
                  <div className='hero__btn_wrap'>
                     <a href="#" className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true" > </i>
@@ -91,7 +90,7 @@ export default function Hero({Headline,SubHeadline,Description,Picture,Anime,}:H
             </div>
             <div className='hero__right'>
                 <div className='hero__img_wrap'>
-                    {!hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${Picture.url}`} unoptimized/>)}
+                    {!hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${picture.url}`} unoptimized/>)}
 
                     {hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${Anime.gif.url}`} unoptimized/>)}
 

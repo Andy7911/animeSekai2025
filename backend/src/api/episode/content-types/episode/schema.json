@@ -12,27 +12,27 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Season": {
+    "season": {
       "type": "integer"
     },
-    "Nb_episode": {
+    "nb_episode": {
       "type": "integer"
     },
     "release_date": {
       "type": "date"
     },
-    "anime": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::anime.anime"
-    },
     "videos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::video.video"
+    },
+    "anime": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::anime.anime"
     }
   }
 }

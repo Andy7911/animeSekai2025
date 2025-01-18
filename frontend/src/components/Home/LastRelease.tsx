@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function LastRealese() {
 
     useEffect(() => {
-        debugger;
+       
         const animamation = gsap.fromTo('.card_anime__image',
             {
 
@@ -39,7 +39,8 @@ export default function LastRealese() {
     }, [])
     return (
         <section className='last_release' id='last-release'>
-            <h4>Recement mise a jour</h4>
+            <h4>Les Dernières Sorties Anime</h4>
+            <h5>Ne manque rien de la saison ! Nouveaux épisodes, dernières séries et tout ce qu’il te faut pour rester à jour.</h5>
 
             <a className='card_anime'>
                 <Image className='card_anime__title' alt='' src='http://localhost:1337/uploads/title_friren_8979483797.png' width={100} height={50} />

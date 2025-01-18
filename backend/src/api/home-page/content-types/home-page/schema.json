@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Headline": {
+    "headline": {
       "pluginOptions": {
         "i18n": {
           "localized": true

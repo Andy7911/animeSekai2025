@@ -6,31 +6,21 @@ import LastRealese from "@/components/Home/LastRelease";
 import Schedule from "@/components/Home/Schedule";
 import PopUp from "@/components/Home/PopUp";
 
-interface Picture {
-  url: String
-}
+import { Anime } from "@/types/anime";
+
 interface Media {
   url: String
 }
-interface Anime {
-  id: Number,
-  Name: String,
-  description: String,
-  notation: number,
-  Highline_title: String
-  categories: String
-  gif: Media,
-  musique: Media
 
-}
 
 interface Hero {
   id: number,
-  Headline: String,
-  SubHeadline: String,
-  Description: String,
-  Picture: Picture,
+  headline: String,
+  subHeadline: String,
+  description: String,
+  picture: Media,
   anime: Anime
+  categories:String
 
 }
 interface Recommends {
@@ -46,7 +36,7 @@ interface HomeRespose {
 
 export default async function Home() {
   async function getData(): Promise<HomeRespose> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home-page?populate[Hero][populate][anime][populate]=*&populate[Hero][populate]=Picture&populate[Recommends][populate]=*`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home-page?populate[Hero][populate][anime][populate]=*&populate[Hero][populate]=picture&populate[Recommends][populate][anime][populate]=*`, {
       headers: { 'Authorization': `Bearer ${process.env.TOKEN_API}  ` }
     })
     await new Promise((resolve => setTimeout(resolve, 4000)))
@@ -55,20 +45,33 @@ export default async function Home() {
 
   let res = await getData();
   const { Hero, Recommends } = res.data;
+  // function extractAnimes(recommends: Recommends[]): Recommends["anime"][] {
+  //   return recommends.map((recommend) => recommend.anime);
+  // }
+
+  console.log('recomment',Recommends[0].anime)
+
+let animes
+  animes = Recommends.map((items,index)=>{
+
   
+    return items.anime
+  })
+  console.log('anime',animes)
   return (
     <div className="container home">
-      <PopUp hidden={true}/>
+      
       <div className="home__left">
-        <HeroComponent Headline={Hero.Headline} Picture={Hero.Picture} Description={Hero.Description} Anime={Hero.anime}  SubHeadline={Hero.SubHeadline} />
+        <HeroComponent headline={Hero.headline} picture={Hero.picture} description={Hero.description} Anime={Hero.anime}  subHeadline={Hero.subHeadline} />
 
 
-        <Recommend />
+        <Recommend anime={animes} />
 
         <LastRealese />
 
         <section className="watching" style={{ height: 500, width: 1200 }}>
-          <h4>Vos visionnnement </h4>
+          <h4>Continue Là Où Tu T’es Arrêté"</h4>
+          <h5>Retrouve facilement tes derniers visionnements et replonge instantanément dans l’action</h5>
 
         </section>
         <Schedule/>

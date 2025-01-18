@@ -1,28 +1,38 @@
 'use client'
-import React, { useState } from 'react'
+import React, {forwardRef, useState,useImperativeHandle,useRef, useEffect } from 'react'
 import Image from 'next/image'
 
-interface Props {
-
+interface PopUpProps {
+  animeId:Number
   hidden: Boolean
 
 }
-export default function PopUp({ hidden=false }: Props) {
+ const PopUp= forwardRef((props:PopUpProps,ref)=> {
 
-const [visible,isVisible ] = useState(hidden)
+  const localRef = useRef<HTMLDivElement>(null);
+  const { hidden = true } = props;
+const [visible,isVisible ] = useState(props.hidden)
 
-const handlerClose=()=>{
+useEffect(()=>{
 
-  isVisible(false)
 
+})
+useImperativeHandle(ref, () => ({
+handlerOpen:()=>{
+isVisible(true)
 }
-const handlerOpen=()=>{
-  isVisible(true)
+}));
+const handlerClose=()=>{
+isVisible(false)
 }
   return (
-    <div>
-    {visible&&
-    <div className='popup'>
+    <div /// <reference path="" />
+    >
+  
+    <div className={`popup ${visible? 'visible':''}`}>
+    {/* <audio  controls>
+      <source src={``} type="audio/mpeg" />
+    </audio> */}
       <div className='popup__content'>
         <div className='popup__close' onClick={()=>handlerClose()}> <i className="fa-solid fa-x" style={{color:'#000'}} aria-hidden='true' ></i></div>
         <div className='popup__title'>
@@ -35,7 +45,8 @@ const handlerOpen=()=>{
         </div>
       </div>
     </div>
-    }
+   
     </div>
   )
-}
+})
+export default PopUp;
