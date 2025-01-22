@@ -1,9 +1,9 @@
 .blogCard{
-    height: 432px;
-    // width: 531px;
-    width: 45%;
+    height: 255px;
+    width: 40%;
     background: rgba(231,231,252,1);
-    padding : 2%;
+    // padding : 2%;
+    padding : 20px;
     border-radius: 5px;
     position: relative;
     overflow: hidden;
@@ -26,16 +26,14 @@
             align-items: center;
             
             p {
-                font-size: 3rem;
+                font-size: 2rem;
                 font-weight: bold;
-                
-                
             }
         }
 
         &__middle {
             p {
-                font-size: 1.5rem;
+                font-size: 1rem;
                 max-width: 85%;
                 
             }
@@ -46,7 +44,7 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: end;
-                max-width: 92%;
+                max-width: 90%;
             }
 
             &__lower {
@@ -58,12 +56,15 @@
     }
 
     a {
-        font-size: 1.5rem;
-        padding: 10px 20px;
+        font-size: 1rem;
+        padding: 7px 14px;
         border-radius: 5px;
         background-color: $secondaryColor;
         display: inline-block;
         color : white;
+        -webkit-box-shadow: 1px 3px 5px -1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 3px 5px -1px rgba(0,0,0,0.75);
+        box-shadow: 1px 3px 10px -1px rgba(0,0,0,0.75);
 
         &:hover {
             transform: scale(.98);
@@ -71,12 +72,12 @@
         }
     }
 
-    $width: 132px;
+    $width: 90px;
     $rightPositionned: $width /2 *-1;
     .right-side-circle {
         position: absolute;
         width: $width;
-        height: 200px;
+        height: 125px;
         border-radius: 50%;
         background-color: #090909;
         right: $rightPositionned; 
@@ -84,13 +85,13 @@
         transform: translateY(-50%);
     }
 
-    $w_right-side-circle: 120px;
+    $w_right-side-circle: 96px;
     $rightPositionned : $w_right-side-circle /2 *-1;
     @media (max-width : $tablet-h) {
         .right-side-circle {
             width: $w_right-side-circle;
             right: $rightPositionned;
-            height: 180px;
+            height: 140px;
         }
 
         .grid {
@@ -107,31 +108,53 @@
             }
         }
 
-        a {
-            font-size: 1.25rem;
-            padding: 8px 16px;
-        }
+        // a {
+        //     font-size: 1.25rem;
+        //     padding: 8px 16px;
+        // }
     }
 
+
+    $w_right-side-circle-table-v: 129px;
+    $rightPositionned : $w_right-side-circle-table-v /2 * -1;
     @media (max-width : $tablet-v) {
-        a {
-            font-size: 1rem;
-            padding: 8px 16px;
+        // a {
+        //     font-size: 1rem;
+        //     padding: 8px 16px;
+        // }
+
+        .right-side-circle {
+            width: $w_right-side-circle;
+            right: $rightPositionned;
+            height: 100px;
         }
 
         .grid {
             &__top {
                 p {
-                    font-size: 2.5rem;
+                    font-size: 24px;
                 }
             }
             &__middle { 
                 p {
-                    font-size: 1.35rem;
+                    font-size: 14px;
                     max-width: 75%;
                 }
             }
+
+            &__bottom {
+                &__upper {
+                    max-width: 92%;
+                }
+            }
         }
+
+        a {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+
+
     }
  
     @media (max-width : $mobile) {
@@ -140,10 +163,6 @@
     }
 
     @media (max-width : $mobile-s) {
-        a {
-            font-size: 0.85rem;
-        }
-
         img {
             height: auto;
             width: 40px;

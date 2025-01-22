@@ -5,9 +5,6 @@
      border-radius: 10px;
      min-width: 0;
 
-     
-
-     //     max-width: 61dvw;
      .carouselFeatureCollectionProductSwiperInit {
           overflow-y: visible;
           overflow-x: clip;
@@ -15,7 +12,8 @@
 
      .carousel-item {
           width: 100%;
-          height: 482px * .8;
+          // height: 482px * .8;
+          height: 300px;
           display: flex;
           min-width: 0;
           align-items: end;
@@ -41,7 +39,7 @@
                // max-width: 73%;
                // min-height: 482px * 0.75;
                // max-height: 90%;
-               width: 345px;
+               width: 275px;
                height: auto;
                position: absolute;
                top: -15%;
@@ -54,7 +52,7 @@
 
           .carousel-item {
                &__image {
-                    width: 265px;
+                    width: 235px;
                }
                &__info {
                     font-size: 2.0rem;
@@ -68,6 +66,7 @@
           .carousel-item {
                &__image {
                     width: 170px;
+                    top: 0;
                }
           }
      }
@@ -81,6 +80,7 @@
           .carousel-item {
                &__image {
                     width: 250px;
+                    top: -15%;
                }
           }
      }
@@ -89,14 +89,20 @@
           .carousel-item {
                &__image {
                     width: 175px;
+                    top : 0;
+               }
+               &__info {
+                    font-size: 20px;
                }
           }
      }
 
      @media (max-width: $mobile-s) {
-          .carousel-itemd {
+          .carousel-item {
                &__image {
-                     width: 40px;
+                     width: 150px;
+                     top: 0;
+                  
                }
           }
      }

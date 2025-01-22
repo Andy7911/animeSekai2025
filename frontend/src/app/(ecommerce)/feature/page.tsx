@@ -37,15 +37,15 @@ const FeaturePage :  React.FC = async () => {
             <div className='flex'>
                 
                 <div className="exploration-section__content">
-                    <Image src="/cosplay.png" width={154} height={154} alt='Cosplay image' />
-                    <p>cosplay</p>
+                    <Image src="/cosplay.png" width={100} height={100} alt='Cosplay image' />
+                    <p>Cosplay</p>
                 </div>
                 <div className="exploration-section__content">
-                    <Image src="/robot.png" width={154} height={154} alt="Figurine image" />
+                    <Image src="/robot.png" width={100} height={100} alt="Figurine image" />
                     <p>Figurine</p>
                 </div>
-                <div className="exploration-section__content">
-                    <Image src="/comic.png" width={154} height={154}  alt="Manga or novel" />
+                <div className="exploration-section__content mangaNovel">
+                    <Image src="/comic.png" width={100} height={100}  alt="Manga or novel" />
                     <p>Manga or novel</p>
                 </div>
             </div>

@@ -17,7 +17,7 @@
 
 
     .parallax-scrolling-section {
-        min-height: 482px;
+        min-height: 220px;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -38,8 +38,8 @@
         padding-right: $padding-horizontal;
 
         p:first-child {
-            font-size: 2.5rem;
-            width: 45%;
+            font-size: 1.5rem;
+            width: 35%;
             margin-bottom: 20px;
             
         }
@@ -58,7 +58,7 @@
     }
 
     .insight-idea-section {
-        padding-top: 150px;
+        padding-top: 80px;
         padding-left : $padding-horizontal;
         padding-right : $padding-horizontal;
 
@@ -70,7 +70,8 @@
 
     .feature-product-section {
         margin-top: 150px;
-        margin-bottom: 150px;
+        // margin-bottom: 150px;
+        margin-bottom: 100px;
         // overflow: visible;
         padding-left: $padding-horizontal;
         padding-right: $padding-horizontal;
@@ -84,16 +85,15 @@
             // width: 100dvw ;
             position: relative;
             
-            
-            // overflow: visible;
-            
         }
 
        &__see-offers {
             position: relative;
-            margin-top: 150px;
+            // margin-top: 150px;
+            margin-top: 90px;
             width: 100%;
-            height: 289px;
+            // height: 289px;
+            height: 200px;
             background-image: url("../../../public/anime_background_with_green_field_larger.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
@@ -138,6 +138,8 @@
         }
     }
 
+    
+
     @media (max-width : $mobile) {
 
         .exploration-section {
@@ -154,9 +156,15 @@
             }
 
              .flex {
-                flex-direction: column;
-                justify-content: center;
-                row-gap: 20px;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                // flex-direction: column;
+                // justify-content: center;
+                // row-gap: 20px;
+             }
+
+             .mangaNovel {
+                grid-column: span 2;
              }
         }
 
@@ -178,8 +186,9 @@
         .insight-idea-section {
             &__blogCard {
                 display: grid;
-                grid-template-columns: 1fr;
-                gap: 50px;
+                // grid-template-columns: 1fr;
+                row-gap: 50px;
+                justify-content: center;
             }
         }
         
@@ -188,7 +197,17 @@
     @media (max-width : $mobile-m) {
         .parallax-scrolling-section {
             background-size: cover;
-            min-height: 55dvh;
+            // min-height: 55dvh;
+            min-height: 40dvh;
+        }
+
+        .exploration-section {
+            .flex {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 20px;
+            }
         }
     }  
 }

@@ -20,7 +20,7 @@ const BlogCard : React.FC<IBlogCard> = ( {title,body,right_side_circle = false},
       <div className='grid'>
         <div className='grid__top'>
           <p>{title}</p>
-          <Image src='/sharingan.png' alt="Sharingan Image" width={50} height={50} />
+          <Image src='/sharingan.png' alt="Sharingan Image" width={35} height={35} />
         </div>
         <div className='grid__middle'>
           <p>{body}</p>
@@ -30,7 +30,7 @@ const BlogCard : React.FC<IBlogCard> = ( {title,body,right_side_circle = false},
             <a href="" className='btn-know-more'>En savoir Plus</a>
           </div>
           <div className='grid__bottom__lower'>
-            <Image src="/sharingan.png" alt="Sharingan Image" width={50} height={50} />
+            <Image src="/sharingan.png" alt="Sharingan Image" width={35} height={35} />
           </div>
         </div>
 

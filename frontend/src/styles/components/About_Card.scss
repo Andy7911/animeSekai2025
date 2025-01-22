@@ -1,6 +1,6 @@
 .aboutCard {
-    margin-top: 150px;
-    height: 325px;
+    margin-top: 75px;
+    height: 250px;
     position: relative;
     background: rgba(236, 232, 252, 1);
     color: black;
@@ -8,8 +8,9 @@
     padding: 2%;
 
     .title {
-        font-size: 2.5rem;
-        margin-bottom: 25px;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
         
     }
 
@@ -19,7 +20,16 @@
         left: 50%;
         transform: translate(-50%,-25%);
         height: auto;
-        width: 266px;
+        width: 200px;
+    }
+
+    @media (max-width : $tablet-v) {
+        .title {
+            font-size : 24px;
+        }
+        .content {
+            font-size: 14px;
+        }
     }
 
     @media (max-width : $mobile) {
@@ -39,10 +49,14 @@
     }
 
     @media (max-width : $mobile-s) {
-        height: 375px;
+        height: 245px;
 
         img {
             width: 125px;
+        }
+
+        .content {
+            font-size: 14px;
         }
     }
 }
