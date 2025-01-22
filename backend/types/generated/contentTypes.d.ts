@@ -420,6 +420,7 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
     episodes: Schema.Attribute.Relation<'oneToMany', 'api::episode.episode'>;
     gif: Schema.Attribute.Media<'images'>;
     highline_title: Schema.Attribute.String;
+    imgTitle: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::anime.anime'> &
       Schema.Attribute.Private;

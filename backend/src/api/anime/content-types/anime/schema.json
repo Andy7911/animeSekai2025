@@ -65,6 +65,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::episode.episode"
+    },
+    "imgTitle": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

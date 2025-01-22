@@ -2,20 +2,22 @@
 
 export interface Anime {
 id:Number,
-documentId:String,
-name:Sting,
-description:String,
+documentId:string,
+name:sting,
+description:string,
 notation:number,
-highline_title:String,
-categories:String,
+highline_title:string,
+categories:string,
 gif: Media,
 musique: Media
 Episodes:Episode[]
+thumbnail:Media
+imgTitle:Media
 }
 
 export interface Episode{
 id:Number,
-documentId:String,
+documentId:string,
 Season:Number,
 Nb_episode:Number,
 release_date:Date,
