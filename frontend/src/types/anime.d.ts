@@ -10,16 +10,17 @@ highline_title:string,
 categories:string,
 gif: Media,
 musique: Media
-Episodes:Episode[]
+episodes:Episode[]
 thumbnail:Media
 imgTitle:Media
+video:Media
 }
 
 export interface Episode{
 id:Number,
 documentId:string,
-Season:Number,
-Nb_episode:Number,
+season:Number,
+nb_episode:Number,
 release_date:Date,
 videos:Video[]
 
@@ -31,7 +32,7 @@ export interface Media{
 export interface Video{
     id:Number,
     documentId:String,
-    Langues:String,
-    Url:String,
+    langues:String,
+    URL:String,
     publishedAt:Date
 }

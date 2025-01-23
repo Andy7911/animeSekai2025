@@ -67,11 +67,15 @@
       "target": "api::episode.episode"
     },
     "imgTitle": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "realease_date": {
+      "type": "date"
     }
   }
 }

@@ -13,10 +13,10 @@ export default function Recommend({anime}:Recommendations) {
 
 const imageTrack = useRef<HTMLDivElement | null>(null);
 const imageRef  = useRef<HTMLImageElement | null>(null);
-const popRef = useRef<{handlerOpen:()=>void}>(null)
+const popRef = useRef<{handlerOpen:(id:string)=>void}>(null)
 const [open, setOpen] = useState(false);
 const list = anime.map((item,index)=>(
-    <a key={item.documentId} onClick={()=>Open()}>
+    <a key={item.documentId} onClick={()=>Open(item.documentId)}>
     <Image className='title_img' alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.imgTitle.url}`} width={100} height={50}/>
     <Image className='image' ref={imageRef} alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.thumbnail.url}`}  width={240} height={150} draggable="false" />
 <span>{item.name} </span>
@@ -94,10 +94,10 @@ const list = anime.map((item,index)=>(
     },[open])
 
 
-const Open=()=>{
+const Open=(id:string)=>{
 
     if(popRef.current)
-    popRef.current.handlerOpen()
+    popRef.current.handlerOpen(id)
 }
 
 
