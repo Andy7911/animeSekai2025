@@ -7,6 +7,7 @@ import Schedule from "@/components/Home/Schedule";
 import PopUp from "@/components/Home/PopUp";
 
 import { Anime } from "@/types/anime";
+import { GetServerSideProps } from "next";
 
 interface Media {
   url: String
@@ -69,7 +70,7 @@ let animes
 
         <LastRealese />
 
-        <section className="watching" style={{ height: 500, width: 1200 }}>
+        <section className="watching" style={{ height: 500}}>
           <h4>Continue Là Où Tu T’es Arrêté"</h4>
           <h5>Retrouve facilement tes derniers visionnements et replonge instantanément dans l’action</h5>
 

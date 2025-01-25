@@ -76,6 +76,13 @@
     },
     "realease_date": {
       "type": "date"
+    },
+    "banner": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -25,7 +25,7 @@ export default async function AnimePage({params}:AnimeProps) {
     }
     let res = await getData();
     const animes = res.data
-     const video = animes.
+     const video = animes
     console.log(animes)
   return (
     <div>

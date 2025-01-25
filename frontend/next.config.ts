@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 import path from "path";
 const nextConfig: NextConfig = {
+  i18n: {
+    locales: ['en', 'fr'], // Langues supportées (anglais et français dans cet exemple)
+    defaultLocale: 'en', // Langue par défaut
+  },
   /* config options here */
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

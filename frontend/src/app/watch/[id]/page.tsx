@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { Anime,Episode } from '@/types/anime'
+import Image from 'next/image';
 import WatchFrame from '@/components/Watch/WatchFrame'
 interface WatchProps{
   params:{
@@ -12,7 +13,7 @@ interface WatchProps{
 interface DataAnime{
 
     data:{
-     episodes:Episode
+     episodes:Episode[]
     }
 
 }
@@ -34,7 +35,7 @@ const episodes = res.data.episodes;
 // )
 console.log('anime:',episodes)
   return (
-    <div className='watch_page'>
+    <div className='watch_page container-wide'>
 
 
       <div className='watch_page__top'>
@@ -42,9 +43,23 @@ console.log('anime:',episodes)
       </div>
       watch page {id}
    <WatchFrame episodes={episodes}/>
-      <iframe width={640} height={360} src={`${episodes[0].videos[0].URL}`}></iframe>
+
+<section className='recommend'>
+<h3>Recommendation anime similaire</h3>
+<div className='recommend__content'>
+
+  <a className='card_anime'>
+                <Image className='card_anime__title' alt='' src='http://localhost:1337/uploads/title_friren_8979483797.png' width={100} height={50} />
+                <Image className='card_anime__image' alt='' src='http://localhost:1337/uploads/frieren_8c09e65ee6.png' width={240} height={150} draggable="false" />
+                <span> Frieren beyond journey's end </span>
+
+            </a>
 
 
+</div>
+
+
+</section>
       
     </div>
   )

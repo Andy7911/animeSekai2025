@@ -410,6 +410,7 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    banner: Schema.Attribute.Media<'images'>;
     category: Schema.Attribute.Enumeration<
       ['recommande', 'vedette', 'regular']
     >;
