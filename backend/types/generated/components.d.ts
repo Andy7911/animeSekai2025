@@ -46,7 +46,10 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
     CTA: Schema.Attribute.Component<'component.button', true>;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 275;
+      }>;
     headline: Schema.Attribute.String;
     picture: Schema.Attribute.Media<'images'>;
     subHeadline: Schema.Attribute.String;

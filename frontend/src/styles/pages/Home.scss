@@ -1,4 +1,5 @@
 .home {
+    outline: 4px solid red;
 
     position: relative;
 
@@ -31,7 +32,7 @@
         border-radius: 5px;
         background-color: #201F2D;
         height: 300px;
-        width: 330px;
+       
         margin-bottom: 20px;
         justify-content: space-between;
 
@@ -275,12 +276,17 @@
     .swiper{
         position: relative;
         padding: 0px 25px;
-        overflow: hidden; /* Empêche le débordement */
         width: 95%;      /* Assure que le slider occupe tout l'espace disponible */
-        margin: auto;
+        margin: 0 40px;
+        overflow: hidden;
+       
     }
     .swiper-wrapper{
-        display: flex;
+        display: flex !important;
+    }
+    .swiper-slide{
+        flex-shrink: 0;
+     
     }
     .swiper-button-prev, .swiper-button-next {
         content: none;

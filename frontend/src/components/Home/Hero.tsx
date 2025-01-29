@@ -37,7 +37,10 @@ interface Picture{
 
 export default function Hero({headline,subHeadline,description,picture,Anime,}:Hero) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const rightImg = useRef<HTMLDivElement | null>(null)
     const [hidden, setHidden] = useState(false);
+
+    const mediaQuery = typeof window !== "undefined" && window.matchMedia("(max-width: 650px)").matches; // Vérifie si on est sur mobile
     useEffect(() => {
         if (typeof window !== 'undefined') {
             console.log('Rendu côté client');
@@ -46,6 +49,12 @@ export default function Hero({headline,subHeadline,description,picture,Anime,}:H
     const animationPlay = () => {
 
         setHidden(true);
+        if(rightImg.current){
+            if(mediaQuery)
+            rightImg.current.animate({
+                                
+               width: `100%`},{ duration: 1000, fill: "forwards" });
+        }
         if(audioRef.current){
         audioRef.current.play();
         audioRef.current.loop= true;
@@ -55,6 +64,12 @@ export default function Hero({headline,subHeadline,description,picture,Anime,}:H
     const animationStop = () => {
 
         setHidden(false);
+        if(rightImg.current){
+            if(mediaQuery)
+            rightImg.current.animate({
+                                
+               width: "50%"},{ duration: 500, fill: "forwards" });
+        }
         if(audioRef.current){
         audioRef.current.pause();
     }
@@ -88,7 +103,7 @@ export default function Hero({headline,subHeadline,description,picture,Anime,}:H
                     <a href="#" className='button-outline'>Add to watch</a>
                 </div> 
             </div>
-            <div className='hero__right'>
+            <div className='hero__right' ref={rightImg}>
                 <div className='hero__img_wrap'>
                     {!hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${picture.url}`} unoptimized/>)}
 

@@ -13,97 +13,30 @@ export default function Recommend({anime}:Recommendations) {
 
 const imageTrack = useRef<HTMLDivElement | null>(null);
 const imageRef  = useRef<HTMLImageElement | null>(null);
-const popRef = useRef<{handlerOpen:(id:string)=>void}>(null)
+const popRef = useRef<{handlerOpen:(animes:Anime)=>void}>(null)
 const [open, setOpen] = useState(false);
 const list = anime.map((item,index)=>(
-    <a key={item.documentId} onClick={()=>Open(item.documentId)}>
-    <Image className='title_img' alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.imgTitle.url}`} width={100} height={50}/>
-    <Image className='image' ref={imageRef} alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.thumbnail.url}`}  width={240} height={150} draggable="false" />
+    <a  className='card_anime' key={item.documentId} onClick={()=>Open(item)}>
+    <Image className='card_anime__title' alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.imgTitle.url}`} width={100} height={50}/>
+    <Image className='card_anime__image' ref={imageRef} alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${item.thumbnail.url}`}  width={240} height={150} draggable="false" />
 <span>{item.name} </span>
 </a>
 ))
     useEffect(() => {
-        const handleMouseDown = (e: MouseEvent) => {
        
-            if (imageTrack.current) {     
-          
-                imageTrack.current.dataset.mouseDownAt = e.clientX.toString()
-            }
-
-            const handleMouseMove = (e: MouseEvent) => {
-                
-                if (imageTrack.current) 
-                    {if(imageTrack.current.dataset.mouseDownAt === '0'){
-                    return
-                }
-                    const mouseDownAt = imageTrack.current.dataset.mouseDownAt
-                        ? parseFloat(imageTrack.current.dataset.mouseDownAt)
-                        : 0;
-                    const mouseDelta = e.clientX - mouseDownAt;
-                    const maxDeltal = window.innerWidth/ 2
-                    const pourcentage = (mouseDelta / maxDeltal) * -100
-                    const  nextPercentageUnconstrained = imageTrack.current.dataset.prevPourcentage
-                    ? parseFloat(imageTrack.current.dataset.prevPourcentage) + pourcentage
-                    : 0;
-                    const nextPourcentage =Math.max(Math.min(nextPercentageUnconstrained, 0), -90);
-                    imageTrack.current.dataset.prevPourcentage = nextPourcentage.toString();
-                    console.log(nextPourcentage)
-                    imageTrack.current.animate({
-                        transform :`translate(${nextPourcentage}%, 0%)`},{duration:1400,fill:"forwards"})
-                        const images = imageTrack.current.getElementsByClassName("image");
-                        Array.from(images).forEach((image=>{
-                            const img = image as HTMLElement;
-                            
-                              img.animate({
-                                
-                               objectPosition: `${100 + nextPourcentage}% center`},{ duration: 1400, fill: "forwards" });
-                        }))
-                      
-                }
-               
-            }  
-            const handleMouseUp = (e:MouseEvent)=>{
-
-            if(imageTrack.current){
-                imageTrack.current.dataset.mouseDownAt = '0'
-                imageTrack.current.dataset.prevPourcentage =  imageTrack.current.dataset.prevPourcentage
-                const images = imageTrack.current.getElementsByClassName("image");
-            Array.from(images).forEach((image) => {
-                const img = image as HTMLElement;
-                img.animate(
-                    { objectPosition: `0% center` },
-                    { duration: 1200, fill: "forwards" }
-                );
-            });
-   
-            }
-
-            window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener("mouseup", handleMouseUp);
-        }
-            window.addEventListener("mousemove", handleMouseMove);
-             window.addEventListener('mouseup', handleMouseUp); 
-        }
-      
-
-        window.addEventListener("mousedown", handleMouseDown); 
-        return () => {
-            window.removeEventListener("mousedown", handleMouseDown);
-          }; 
-
     },[open])
 
 
-const Open=(id:string)=>{
+const Open=(anime:Anime)=>{
 
     if(popRef.current)
-    popRef.current.handlerOpen(id)
+    popRef.current.handlerOpen(anime)
 }
 
 
     return (
         <section className='recommends'>
-            <PopUp animeId={1} ref={popRef} hidden={false}/>
+            <PopUp ref={popRef} hidden={false}/>
             <div className='recommends__content'>
 
          

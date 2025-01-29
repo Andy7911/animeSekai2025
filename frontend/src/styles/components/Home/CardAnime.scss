@@ -1,14 +1,20 @@
 .card_anime{
  
         display: block;
-        position: absolute;
+        position: relative;
+        width: fit-content;
+        margin-right: 20px;
+        margin-bottom: 10px;
 
         span {
             font-family: $ubuntu;
             font-weight: 300;
             font-size: 14px;
         }
-    
+        @media(max-width: $mobile){
+            width: calc(46% - 0px);
+            margin-right: 10px;
+        }
 
     &__image {
         border-radius: 5px;
@@ -16,6 +22,7 @@
         height: 312px;
         object-fit: cover;
         object-position: 0% center;
+   
     }
 
     &__title {

@@ -1,7 +1,6 @@
 'use client'
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide,} from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, } from 'swiper/modules';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
@@ -15,16 +14,30 @@ export default function Schedule() {
 
             <div className='swiper-content'>
                 <Swiper
-                    modules={[Navigation]}
-
-                    spaceBetween={30}
+                className="swiper"
+                    modules={[Navigation]} 
+                    direction='horizontal'  
+                     spaceBetween={10}
                     slidesPerView={2}
-
+                  
+                    breakpoints={{
+                    
+                        480: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
+                        640: {
+                            slidesPerView: 5,
+                            spaceBetween: 50,
+                        }
+                      
+                    }}
                     navigation={{
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
-                    }}
-                    direction='horizontal'
+                      }}
+               
+                   
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
@@ -41,17 +54,22 @@ export default function Schedule() {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>     <div className='schedule__card'>
-                        <h3>Mon</h3>
+                        <h3>TUES</h3>
                         <span> Juil 25</span>
                     </div></SwiperSlide>
                     <SwiperSlide>
                         <div className='schedule__card'>
-                            <h3>Mon</h3>
+                            <h3>wednes</h3>
                             <span> Juil 25</span>
                         </div></SwiperSlide>
                     <SwiperSlide>
                         <div className='schedule__card'>
-                            <h3>Mon</h3>
+                            <h3>Tuersdays</h3>
+                            <span> Juil 25</span>
+                        </div></SwiperSlide>
+                        <SwiperSlide>
+                        <div className='schedule__card'>
+                            <h3>Fridays</h3>
                             <span> Juil 25</span>
                         </div></SwiperSlide>
 
@@ -62,13 +80,13 @@ export default function Schedule() {
             <div className='schedule__calendar'>
 
                 <div className='schedule__cell'>
-              <div>  <span>9H00</span> <span>DEMON SLAYER</span></div>
-                <a href='#'> Episode 2 <i className='fa fa-play' aria-hidden="true"></i></a>
+                    <div>  <span>9H00</span> <span>DEMON SLAYER</span></div>
+                    <a href='#'> Episode 2 <i className='fa fa-play' aria-hidden="true"></i></a>
                 </div>
                 <div className='schedule__cell'>
                     <div>
-                <span>9H00</span> <span>DEMON SLAYER</span>
-                </div>
+                        <span>9H00</span> <span>DEMON SLAYER</span>
+                    </div>
                 </div>
 
 
@@ -77,6 +95,6 @@ export default function Schedule() {
 
 
 
-        </section>
+        </section >
     );
 }
