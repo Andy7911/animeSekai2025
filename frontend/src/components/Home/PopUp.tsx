@@ -67,7 +67,7 @@ if(visible){
         <Image className='popup__bg' alt='' src={`${process.env.NEXT_PUBLIC_API_URL}${anime?.gif.url}`} width={500} height={500} />
         <div className='popup__text'>
         <p>{anime?.description}</p>
-        <a href={`/watch/${anime?.documentId}`}> Watch </a>
+        <a href={`/archive/${anime?.name}`}> Watch </a>
       
         </div>
       </div>

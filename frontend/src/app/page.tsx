@@ -5,14 +5,17 @@ import Recommend from "@/components/Home/Recommend";
 import LastRealese from "@/components/Home/LastRelease";
 import Schedule from "@/components/Home/Schedule";
 import PopUp from "@/components/Home/PopUp";
-
+import Filter from "@/components/Home/Filter";
 import { Anime } from "@/types/anime";
 import { GetServerSideProps } from "next";
 
 interface Media {
   url: String
 }
-
+interface CTA{
+  text:string
+  url:string
+}
 
 interface Hero {
   id: number,
@@ -21,7 +24,8 @@ interface Hero {
   description: String,
   picture: Media,
   anime: Anime
-  categories:String
+  categories: String,
+  cta:CTA
 
 }
 interface Recommends {
@@ -35,10 +39,16 @@ interface HomeRespose {
   }
 }
 
+
+  // Simuler un délai de 4 secondes (optionnel)
+
+
+
 export default async function Home() {
   async function getData(): Promise<HomeRespose> {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/home-page?populate[Hero][populate][anime][populate]=*&populate[Hero][populate]=picture&populate[Recommends][populate][anime][populate]=*`, {
-      headers: { 'Authorization': `Bearer ${process.env.TOKEN_API}  ` }
+      headers: { 'Authorization': `Bearer ${process.env.TOKEN_API}  ` },
+      cache: "no-store", // Empêche le cache si besoin
     })
     await new Promise((resolve => setTimeout(resolve, 4000)))
     return res.json();
@@ -50,70 +60,53 @@ export default async function Home() {
   //   return recommends.map((recommend) => recommend.anime);
   // }
 
-  console.log('recomment',Recommends[0].anime)
+  console.log('recomment', Recommends[0].anime)
 
-let animes
-  animes = Recommends.map((items,index)=>{
+  let animes
+  animes = Recommends.map((items, index) => {
 
-  
+
     return items.anime
   })
-  console.log('anime',animes)
+  console.log('anime', animes)
   return (
     <div className="container home">
-      
+
       <div className="home__left">
-        <HeroComponent headline={Hero.headline} picture={Hero.picture} description={Hero.description} Anime={Hero.anime}  subHeadline={Hero.subHeadline} />
+        <HeroComponent headline={Hero.headline} picture={Hero.picture} description={Hero.description} Anime={Hero.anime} subHeadline={Hero.subHeadline} cta={Hero.cta} />
 
 
         <Recommend anime={animes} />
 
         <LastRealese />
 
-        <section className="watching" style={{ height: 500}}>
+        <section className="watching" style={{ height: 500 }}>
           <h4>Continue Là Où Tu T’es Arrêté"</h4>
           <h5>Retrouve facilement tes derniers visionnements et replonge instantanément dans l’action</h5>
-
+          <div className="watching__content">
+            <a className='card_anime'>
+              <Image className='card_anime__title' alt='' src="http://localhost:1337/uploads/Solo_Leveling_English_logo_svg_3a7f562c73.png" width={100} height={50} />
+              <Image className='card_anime__image' alt='' src="http://localhost:1337/uploads/solo_leveling_0eed17a3df.png" width={240} height={150} draggable="false" />
+              <span></span>
+            </a>
+            <a className='card_anime'>
+              <Image className='card_anime__title' alt='' src="http://localhost:1337/uploads/Solo_Leveling_English_logo_svg_3a7f562c73.png" width={100} height={50} />
+              <Image className='card_anime__image' alt='' src="http://localhost:1337/uploads/solo_leveling_0eed17a3df.png" width={240} height={150} draggable="false" />
+              <span></span>
+            </a>
+            <a className='card_anime'>
+              <Image className='card_anime__title' alt='' src="http://localhost:1337/uploads/Solo_Leveling_English_logo_svg_3a7f562c73.png" width={100} height={50} />
+              <Image className='card_anime__image' alt='' src="http://localhost:1337/uploads/solo_leveling_0eed17a3df.png" width={240} height={150} draggable="false" />
+              <span></span>
+            </a>
+          </div>
         </section>
-        <Schedule/>
+        <Schedule />
       </div>
       <div className="home__right">
 
-        <div className="filter">
-          <h4>Quick filter</h4>
-          <div className="filter__content">
-            <div className="filter__item">
-              <div className="filter__dropdown">
+ <Filter/>
 
-                Genre <span> All</span>
-              </div>
-              <div className="filter__menu">
-
-              </div>
-
-            </div>
-            <div className="filter__item">
-              <div className="filter__dropdown">
-
-                Genre <span> All</span>
-              </div>
-              <div className="filter__menu">
-
-              </div>
-
-            </div>
-
-            <input type="text" />
-          </div>
-
-
-          <a className="btn">
-            <span className="btn__text">Filter <i className="fa-solid fa-shield-halved" aria-hidden="true">
-            </i></span>
-
-          </a>
-
-        </div>
         <div className="weekly">
 
           <div className="weekly__top">
@@ -157,8 +150,8 @@ let animes
           </div>
         </div>
 
-        <div className="recently">
-
+        <section className="recently">
+    
           <div className="recently__top">
 
             <h3>Recently add</h3>
@@ -166,29 +159,29 @@ let animes
           </div>
           <div className="recently__content">
             <div className="recently__card">
-            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
-            <div className="recently__card_text">
-                  <h4>Jujutsu kaisen</h4>
-                  <span>2018 EP. 12/14 </span>
-            </div>
-            </div>
-            <div className="recently__card">
-            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
-            <div className="recently__card_text">
-                  <h4>Jujutsu kaisen</h4>
-                  <span>2018 EP. 12/14</span>
-            </div>
+              <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+              <div className="recently__card_text">
+                <h4>Jujutsu kaisen</h4>
+                <span>2018 EP. 12/14 </span>
+              </div>
             </div>
             <div className="recently__card">
-            <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
-            <div className="recently__card_text">
-                  <h4>Jujutsu kaisen</h4>
-                  <span>2018 EP. 12/14</span>
+              <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+              <div className="recently__card_text">
+                <h4>Jujutsu kaisen</h4>
+                <span>2018 EP. 12/14</span>
+              </div>
             </div>
+            <div className="recently__card">
+              <Image alt='card photo' src='http://localhost:1337/uploads/DALL_E_2024_10_22_21_18_52_An_anime_character_standing_in_a_13d47301d4.png' width={47} height={53}></Image>
+              <div className="recently__card_text">
+                <h4>Jujutsu kaisen</h4>
+                <span>2018 EP. 12/14</span>
+              </div>
             </div>
           </div>
 
-        </div>
+        </section>
       </div>
     </div>
   );

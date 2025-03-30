@@ -4,7 +4,8 @@
   "info": {
     "singularName": "view",
     "pluralName": "views",
-    "displayName": "View"
+    "displayName": "View",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::anime.anime"
+    },
+    "ip": {
+      "type": "string"
     }
   }
 }

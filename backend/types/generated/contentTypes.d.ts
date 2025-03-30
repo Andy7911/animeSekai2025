@@ -419,6 +419,7 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     episodes: Schema.Attribute.Relation<'oneToMany', 'api::episode.episode'>;
+    genres: Schema.Attribute.Relation<'oneToMany', 'api::genre.genre'>;
     gif: Schema.Attribute.Media<'images'>;
     highline_title: Schema.Attribute.String;
     imgTitle: Schema.Attribute.Media<'images'>;
@@ -437,6 +438,10 @@ export interface ApiAnimeAnime extends Struct.CollectionTypeSchema {
       >;
     publishedAt: Schema.Attribute.DateTime;
     realease_date: Schema.Attribute.Date;
+    season: Schema.Attribute.Enumeration<
+      ['Spring', 'Winter', 'Fall', 'Summer']
+    >;
+    slug: Schema.Attribute.UID<'name'>;
     thumbnail: Schema.Attribute.Media<'images'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -582,6 +587,46 @@ export interface ApiEpisodeEpisode extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiGenreGenre extends Struct.CollectionTypeSchema {
+  collectionName: 'genres';
+  info: {
+    displayName: 'Genre';
+    pluralName: 'genres';
+    singularName: 'genre';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::genre.genre'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -695,6 +740,7 @@ export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
 export interface ApiViewView extends Struct.CollectionTypeSchema {
   collectionName: 'views';
   info: {
+    description: '';
     displayName: 'View';
     pluralName: 'views';
     singularName: 'view';
@@ -707,6 +753,7 @@ export interface ApiViewView extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    ip: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::view.view'> &
       Schema.Attribute.Private;
@@ -1229,6 +1276,7 @@ declare module '@strapi/strapi' {
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;
       'api::episode.episode': ApiEpisodeEpisode;
+      'api::genre.genre': ApiGenreGenre;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::video.video': ApiVideoVideo;

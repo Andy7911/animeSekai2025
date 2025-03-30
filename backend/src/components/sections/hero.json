@@ -21,9 +21,9 @@
         "images"
       ]
     },
-    "CTA": {
+    "cta": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "component.button"
     },
     "anime": {

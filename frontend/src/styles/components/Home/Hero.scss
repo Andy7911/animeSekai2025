@@ -25,7 +25,7 @@
 
         h4 {
             font-family: $shareTech;
-
+            font-size: 25px;
             @media(max-width: $tablet-v) {
                 font-size: 25px;
             }
@@ -76,12 +76,13 @@
 
             @media(max-width:$mobile) {
                 font-size: 12px;
+                margin-bottom: 20px;
             }
         }
     }
 
     &__right {
-        width: 55%;
+        width: 50%;
         position: relative;
 @media(max-width:$mobile){
     position: absolute;
@@ -130,7 +131,7 @@
 
     &__tag {
         display: flex;
-  justify-content: center;
+        justify-content: center;
         border: 2px solid white;
         border-radius: 15px;
         margin-right: 20px;
@@ -168,5 +169,13 @@
     .btn {
         background-color: #8685EF;
         color: #fff;
+    }
+    .button-rounded{
+        i{
+            margin-left: 10px;
+        }
+    }
+    &_btn_wrap{
+      
     }
 }

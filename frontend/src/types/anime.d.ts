@@ -13,7 +13,9 @@ musique: Media
 episodes:Episode[]
 thumbnail:Media
 imgTitle:Media
-video:Media
+video:Media,
+banner:Media
+slug:string
 }
 
 export interface Episode{

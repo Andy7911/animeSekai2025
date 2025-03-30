@@ -12,6 +12,10 @@ interface Picture{
   interface Media{
     url:String
   }
+  interface CTA{
+    text:string
+    url:string
+  }
   interface Anime{
    id:Number,
    name:String,
@@ -30,12 +34,12 @@ interface Picture{
   subHeadline:String,
   description:String,
   picture: Picture,
-  Anime:Anime  
-  
+  Anime:Anime 
+  cta:CTA
   
   }
 
-export default function Hero({headline,subHeadline,description,picture,Anime,}:Hero) {
+export default function Hero({headline,subHeadline,description,picture,Anime,cta}:Hero) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const rightImg = useRef<HTMLDivElement | null>(null)
     const [hidden, setHidden] = useState(false);
@@ -84,30 +88,31 @@ export default function Hero({headline,subHeadline,description,picture,Anime,}:H
 
         <div className='hero' onClick={() => animationPlay()} onMouseOut={() => animationStop()}>
             <div className='hero__left'>
-                <h4> {headline}</h4>
-                <h1>{subHeadline}</h1>
+
+                <h4> {headline?? 'Sans title'}</h4>
+                <h1>{subHeadline ?? "Sans headline"}</h1>
                <div className='categories'>
 
                     <span className='hero__tag'>Animation </span> <span className='hero__tag'>Animation</span> <span className='hero__tag'>Animation</span>
 
                 </div> 
                  <div className='hero__stars'>
-                    {elements} <span>4.0</span>
+                    {elements?? 'etoile absent'} <span>4.0</span>
                 </div>
                 <p>
-                    {description}
+                    {description ?? ''}
                 </p> 
                  <div className='hero__btn_wrap'>
-                    <a href="#" className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true" > </i>
+                    <a href='#' className='button-rounded'>watch <span><i className="fa fa-play" aria-hidden="true" > </i>
                     </span></a>
                     <a href="#" className='button-outline'>Add to watch</a>
                 </div> 
             </div>
             <div className='hero__right' ref={rightImg}>
                 <div className='hero__img_wrap'>
-                    {!hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${picture.url}`} unoptimized/>)}
+                    {!hidden && (<Image alt="thumbnail" width={542} height={395} src={picture?.url?`${process.env.NEXT_PUBLIC_API_URL}${picture.url}`:`${process.env.NEXT_PUBLIC_API_URL}/uploads/default_img_292948ce91.webp`} unoptimized/>)}
 
-                    {hidden && (<Image alt="thumbnail" width={542} height={395} src={`${process.env.NEXT_PUBLIC_API_URL}${Anime.gif.url}`} unoptimized/>)}
+                    {hidden && (<Image alt="thumbnail" width={542} height={395} src={Anime?.gif?`${process.env.NEXT_PUBLIC_API_URL}${Anime.gif.url}`:`${process.env.NEXT_PUBLIC_API_URL}/uploads/default_img_292948ce91.webp`} unoptimized/>)}
 
                     <audio ref={audioRef} controls>
                         <source src={`${process.env.NEXT_PUBLIC_API_URL}${Anime.musique.url}`} type="audio/mpeg" />
