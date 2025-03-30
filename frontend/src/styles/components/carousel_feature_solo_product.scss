@@ -1,0 +1,104 @@
+.carouselFeatureSoloProduct {
+    flex: 1 1 0; // The parent elements have been set to display flex
+    background-image: url('../../../public/anime_background_with_green_field.png');
+    // height: 482px;
+    // max-height: 90dvh;
+
+    // min-width: 0;
+    max-width: 31dvw;
+    // background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+  
+
+    .carouselFeatureSoloProductSwiperInit {
+        overflow-y: visible;   //  shorthand overflow: clip visible;
+        overflow-x: clip;
+    }
+   
+    .carousel-item {
+       max-width: 100%;
+    //    height: 482px * .8;
+       height: 300px;
+      
+       
+       display: flex;
+       align-items: end;
+       min-width: 0;
+
+       &__info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+
+            width: 100%;
+            padding: 20px;
+            font-size: 2rem;
+
+            p {
+                white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            }
+       }
+       
+       &__image {
+            height: auto;
+            // max-width: 73% ;
+            width: 150px;
+            // min-height: 482px * 0.75;
+            // max-height: 90%;
+            position: absolute;
+            top: -15%;
+            left: 50%;
+            transform: translateX(-50%);
+       }
+    }
+
+
+    @media (max-width: $tablet-h) {
+        .carousel-item {
+            &__image {
+                width: 155px;
+            }
+            &__info {
+                 font-size: 1.75rem;
+                 text-overflow: ellipsis;
+            }
+       }
+    }
+
+    @media (max-width : $tablet-v) {
+        .carousel-item {
+            &__image {
+                width: 160px;
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        max-width: 90dvw;
+        min-width: 0;
+        margin: 0;
+
+        .carousel-item {
+            height: 290px;
+            &__image {
+                width: 160px;
+            }
+        }  
+    }
+
+    @media (max-width : $mobile-m) {
+        .carousel-item{
+            &__image {
+                width: 150px;
+            }
+
+            &__info {
+                font-size: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,110 @@
+.carouselFeatureCollectionProduct {
+     flex: 3 1 0; // The parent element has been set to display flex;
+     background-image: url('../../../public/feature-page-collection-product-background.png');
+     background-size: cover;
+     border-radius: 10px;
+     min-width: 0;
+
+     .carouselFeatureCollectionProductSwiperInit {
+          overflow-y: visible;
+          overflow-x: clip;
+     }
+
+     .carousel-item {
+          width: 100%;
+          // height: 482px * .8;
+          height: 300px;
+          display: flex;
+          min-width: 0;
+          align-items: end;
+
+
+          &__info {
+               display: flex;
+               justify-content: center;
+               width: 100%;
+               padding: 20px;
+               font-size: 2rem;
+               
+               p {
+                    
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    
+               }
+          }
+
+          &__image {
+               // max-width: 73%;
+               // min-height: 482px * 0.75;
+               // max-height: 90%;
+               width: 275px;
+               height: auto;
+               position: absolute;
+               top: -15%;
+               left: 50%;
+               transform: translateX(-50%);
+          }
+     }
+
+     @media (max-width: $tablet-h) {
+
+          .carousel-item {
+               &__image {
+                    width: 235px;
+               }
+               &__info {
+                    font-size: 2.0rem;
+                    // text-overflow: ellipsis;
+               }
+          }
+        
+     }
+
+     @media (max-width : $tablet-v) {
+          .carousel-item {
+               &__image {
+                    width: 170px;
+                    top: 0;
+               }
+          }
+     }
+
+     @media (max-width : $mobile) {
+          max-width: 100%;
+          &_info {
+               font-size: 2rem;
+          }
+
+          .carousel-item {
+               &__image {
+                    width: 250px;
+                    top: -15%;
+               }
+          }
+     }
+
+     @media (max-width : $mobile-m) {
+          .carousel-item {
+               &__image {
+                    width: 175px;
+                    top : 0;
+               }
+               &__info {
+                    font-size: 20px;
+               }
+          }
+     }
+
+     @media (max-width: $mobile-s) {
+          .carousel-item {
+               &__image {
+                     width: 150px;
+                     top: 0;
+                  
+               }
+          }
+     }
+
+}

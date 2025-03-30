@@ -2,12 +2,13 @@ import React from "react";
 
 import Image from "next/image";
 
-import "./page.scss";
 
-import Carousel from '../components/carousel'
+import Carousel from '../(ecommerce)/components/carousel-product-page'
 /* Import Swiper styles */
 
-const DetailPage = () => {
+// TODO
+// Fix glicth with the carousel
+const ProductPage = () => {
   return (
     <div className="page">
       <div className="info">
@@ -129,4 +130,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default ProductPage;

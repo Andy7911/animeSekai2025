@@ -1,3 +1,6 @@
+// This the carousel that is for the product page
+// This carousel has been used 2 times in the product page
+
 "use client"
 
 import React from 'react';
@@ -7,7 +10,7 @@ import { Pagination } from 'swiper/modules';
 import { Autoplay } from 'swiper/modules';
 import Image from "next/image";
 
-import  './carousel.module.css'
+
 // import './swiper-bundle.min.css'
 
 import "swiper/swiper-bundle.css";
@@ -21,12 +24,13 @@ interface SwiperParameter {
   width?: string // ex : 75%,
   navigationButtonOffset? : string // ex 10%
   navgiationButtonfontSize? : string
-  spaceBetweenSlide? : number
+  spaceBetweenSlide? : number,
+  slidesPerView? : number
 
 }
 
 
-const Carousel : React.FC<SwiperParameter> = ( { parameterName, width = "80%", navigationButtonOffset = "-10%" , spaceBetweenSlide = 50  }) => {
+const Carousel : React.FC<SwiperParameter> = ( { parameterName, width = "80%", navigationButtonOffset = "-10%" , spaceBetweenSlide = 50, slidesPerView = 3  }) => {
   return (
     <div style={{ position: 'relative', width: width , margin : '0 auto' }}  className="carousel-container">
 
@@ -37,7 +41,7 @@ const Carousel : React.FC<SwiperParameter> = ( { parameterName, width = "80%", n
         direction="horizontal"
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={spaceBetweenSlide}
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         // autoplay={{
         //   delay: 2500,
         //   disableOnInteraction: false,

@@ -1,0 +1,62 @@
+.aboutCard {
+    margin-top: 75px;
+    height: 250px;
+    position: relative;
+    background: rgba(236, 232, 252, 1);
+    color: black;
+    border-radius: 5px;
+    padding: 2%;
+
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        
+    }
+
+    img {
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translate(-50%,-25%);
+        height: auto;
+        width: 200px;
+    }
+
+    @media (max-width : $tablet-v) {
+        .title {
+            font-size : 24px;
+        }
+        .content {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width : $mobile) {
+        // height: 350px;
+        padding: 6%;
+
+        img {
+            // height: 205px;
+            width: 186px;
+            transform: translate(-50%,50%);
+            bottom: 0px;
+        }
+    }
+
+    @media (max-width: $mobile-m) {
+     
+    }
+
+    @media (max-width : $mobile-s) {
+        height: 245px;
+
+        img {
+            width: 125px;
+        }
+
+        .content {
+            font-size: 14px;
+        }
+    }
+}
