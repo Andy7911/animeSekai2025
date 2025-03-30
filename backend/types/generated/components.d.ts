@@ -1,12 +1,37 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AnimeAnimeRecommend extends Struct.ComponentSchema {
+  collectionName: 'components_anime_anime_recommends';
+  info: {
+    description: '';
+    displayName: 'Recommends_anime';
+    icon: 'play';
+  };
+  attributes: {
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
+  };
+}
+
+export interface AnimeLastRealeaseAnime extends Struct.ComponentSchema {
+  collectionName: 'components_anime_last_realease_animes';
+  info: {
+    description: '';
+    displayName: 'Last_realease_anime';
+  };
+  attributes: {
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentButton extends Struct.ComponentSchema {
   collectionName: 'components_component_buttons';
   info: {
+    description: '';
     displayName: 'Button';
   };
   attributes: {
-    Text: Schema.Attribute.String;
+    text: Schema.Attribute.String;
     url: Schema.Attribute.String;
   };
 }
@@ -19,11 +44,15 @@ export interface SectionsHero extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    CTA: Schema.Attribute.Component<'component.button', true>;
-    Headline: Schema.Attribute.String;
-    Picture: Schema.Attribute.Media<'images'>;
-    SubHeadline: Schema.Attribute.String;
-    Video: Schema.Attribute.Media<'videos'>;
+    anime: Schema.Attribute.Relation<'oneToOne', 'api::anime.anime'>;
+    cta: Schema.Attribute.Component<'component.button', false>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 275;
+      }>;
+    headline: Schema.Attribute.String;
+    picture: Schema.Attribute.Media<'images'>;
+    subHeadline: Schema.Attribute.String;
   };
 }
 
@@ -92,6 +121,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'anime.anime-recommend': AnimeAnimeRecommend;
+      'anime.last-realease-anime': AnimeLastRealeaseAnime;
       'component.button': ComponentButton;
       'sections.hero': SectionsHero;
       'shared.media': SharedMedia;

@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "anime-sekai2025": "file:",
+    "gsap": "^3.12.5",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
@@ -36,7 +37,7 @@
     "eslint-config-next": "15.0.3",
     "eslint-plugin-storybook": "^0.11.1",
     "postcss": "^8",
-    "sass": "^1.81.0",
+    "sass": "^1.83.1",
     "sass-loader": "^16.0.3",
     "storybook": "^8.4.5",
     "style-loader": "^4.0.0",

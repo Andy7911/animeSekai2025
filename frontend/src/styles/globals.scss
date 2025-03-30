@@ -1,5 +1,7 @@
 @import './utils/vars.scss';
 @import './utils/general.scss';
+@import './utils/button.scss';
+@import'./pages/Home.scss';
 @import './components/header.scss';
 @import './components/Hero.scss';
 @import './components/Footer.scss';
@@ -12,3 +14,12 @@
 @import './components/About_Card.scss';
 @import './components/carousel_feature_solo_product.scss';
 @import './components/carousel_feature_collection_product.scss';
+@import './components/Home/Hero.scss';
+@import './components/Home/Recommends.scss';
+@import './components/Home/popUp.scss';
+@import './components/Home/CardAnime.scss';
+@import './components/Home/LastRealease.scss';
+@import './components/Watch/watchFrame.scss';
+@import './components/Watch/Watch.scss';
+@import './components/Home/Filter.scss';
+@import "./pages/Archive.scss";
