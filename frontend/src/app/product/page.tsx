@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 
-import Carousel from '../components/carousel-product-page'
+import Carousel from '../(ecommerce)/components/carousel-product-page'
 /* Import Swiper styles */
 
 // TODO
