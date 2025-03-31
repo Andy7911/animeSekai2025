@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import CarouselFeaturePage from '../components/carousel-feature-page';
-import BlogCard from '../components/feature_components/blog_card';
-import AboutCard from '../components/feature_components/about_card';
-import CarouselFeatureSoloProduct from '../components/carousel-feature-solo-product';
-import CarouselFeatureCollectionProduct from '../components/carousel-feature-collection-product';
+// import CarouselFeaturePage from '../../components/Feature/carousel-feature-page';
+import BlogCard from '../../components/Feature/blog_card';
+import AboutCard from '../../components/Feature/about_card';
+import CarouselFeatureSoloProduct from '../../components/Feature/carousel-feature-solo-product';
+import CarouselFeatureCollectionProduct from '../../components/Feature/carousel-feature-collection-product';
 
 // TODO Feature page
 // The background color, the manga image, and the problaby the pokeball style image will need to change
@@ -15,16 +15,12 @@ import CarouselFeatureCollectionProduct from '../components/carousel-feature-col
 
 const FeaturePage :  React.FC = async () => {
 
-    const response = await fetch("http://localhost:3001/anime");
-
-    const animes : Anime [] = await response.json();
-    console.log(animes);
 
 
     return <div className='feature'>
         <section className='carousel-section'>
 
-            <CarouselFeaturePage animes={animes}    />
+            {/* <CarouselFeaturePage animes={animes}    /> */}
         </section>
         {/* <section className="parallax-scrolling-section">
       

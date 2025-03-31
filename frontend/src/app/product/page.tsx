@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 
-import Carousel from '../(ecommerce)/components/carousel-product-page'
+import Carousel from '../../components/Feature/carousel-product-page'
 /* Import Swiper styles */
 
 // TODO
@@ -45,7 +45,7 @@ const ProductPage = () => {
         </div>
       </div>
 
-      <section className="info-image-cart">
+      <section className="info-image-cart" >
         {/* Carousel with different images  */}
         <div className="info-image-cart__left">
           {/* <div>
@@ -73,12 +73,12 @@ const ProductPage = () => {
             />
           </div> */}
 
-        <Carousel 
-                  parameterName="current-item" 
-                  width="75%" 
-                  navigationButtonOffset="-15%"
-                  spaceBetweenSlide={25}
-                  navgiationButtonfontSize="1rem"/>
+          <Carousel
+            parameterName="current-item"
+            width="75%"
+            navigationButtonOffset="-15%"
+            spaceBetweenSlide={25}
+            navgiationButtonfontSize="1rem" />
         </div>
         {/* Button to add item to cart */}
         <div className="info-image-cart__right">
@@ -90,7 +90,7 @@ const ProductPage = () => {
       <section className="related-items-title">
         <p>Related items</p>
       </section>
-{/* 
+      {/* 
       <section className="related-items-carousel">
         <div>
           {" "}
@@ -123,9 +123,10 @@ const ProductPage = () => {
 
       <section className="wrapper-related-items-content">
         {/* <Carousel parameterName="carousel-2" /> */}
-        <Carousel parameterName="related-items-content" width="70%"/>
+        <Carousel parameterName="related-items-content" width="70%" />
 
       </section>
+
     </div>
   );
 };
